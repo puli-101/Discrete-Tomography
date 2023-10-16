@@ -23,11 +23,39 @@ class Grid:
         for i in range(0,self.n_lignes):
             print("|",end="")
             for j in range(0,self.m_colonnes):
-                if (self.grid[i][j] == 0):
-                    print("   |",end="")
+                if (self.grid[i][j] == 1):
+                    print(" W |",end="")
+                elif (self.grid[i][j] == 2):
+                    print(" B |",end="")
                 else:
-                    print(" █ |",end="")
+                    print("   |",end="")
             print()
             self.print_line()
         print("Line constraints:",self.contrainte_l)
         print("Column constraints:",self.contrainte_c)
+    
+    @staticmethod
+    def read_file(name):
+        f = open(name, "r")
+        Lines = f.readlines()
+        f.close()
+        
+        line_constraints = []
+        column_constraints = []
+        #pointeur a la liste que l'on l'ajoute
+        constraints = line_constraints
+
+        for line in Lines:
+            #on enleve le dernier caractere si c'est un \n
+            if (line[-1] == '\n'):
+                line = line[:-1]
+            if line == "#" and constraints == line_constraints:
+                constraints = column_constraints
+            elif line == "":
+                constraints.append([])
+            else:
+                constraints.append([int(x) for x in line.split(' ')])
+
+        n = len(line_constraints)
+        m = len(column_constraints)
+        return Grid(n,m,line_constraints,column_constraints)
