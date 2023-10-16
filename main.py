@@ -23,7 +23,7 @@ def line_is_colorable(ligne, j, l, T, s):
     elif j > s[l - 1] - 1:
         #si la case est blanche...
         if ligne[j] == 0:
-            #!!!!!!!!!!!!!!!!!1
+            #!!!!!!!!!!!!!!!!!!
             V = line_is_colorable(ligne, j - s[l - 1], l - 1, T, s)
         else:
             #d'apres l'enonce si la case est noire alors
@@ -42,6 +42,6 @@ if __name__ == "__main__":
         l = len(G.contrainte_l[i])
         T = []
         for j in range(G.m_colonnes + 1):
-            T.append([0] * l)
+            T.append([0] * (l+1))
         print(str(i)+"-eme ligne coloreable ?",line_is_colorable(G.grid[i],G.m_colonnes-1,l,T,G.contrainte_l[i]))
 
