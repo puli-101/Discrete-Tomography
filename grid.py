@@ -1,3 +1,6 @@
+import datetime
+import os
+
 class Grid:
     def __init__(self, n_lignes, m_colonnes, contrainte_l = None, contrainte_c = None):
         if (contrainte_c == None):
@@ -36,6 +39,21 @@ class Grid:
     
     @staticmethod
     def read_file(name):
+        """
+            Lecture d'un fichier .txt contenant une grille
+            Format:
+            n1
+            n2 
+            .. 
+            nk
+            #
+            m1
+            m2
+            ..
+            ml
+            representant les contraintes par ligne puis par colonne
+            separees par un #
+        """
         f = open(name, "r")
         Lines = f.readlines()
         f.close()
@@ -59,3 +77,34 @@ class Grid:
         n = len(line_constraints)
         m = len(column_constraints)
         return Grid(n,m,line_constraints,column_constraints)
+    
+    def save_grid(self, name="", comment=""):
+        """
+            Methode pour transformer la grille actuelle en image
+            de taille n * m
+        """
+        if name == "":
+            #generation d'un nom aleatoire
+            basename = "output/temp_grid"
+            suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
+            name = "_".join([basename, suffix])+".bmp"
+        f = open(name, "w")
+        dialation = 512 // min(self.m_colonnes, self.n_lignes)
+
+        #header :
+        # P2
+        # #comment
+        # width * height
+        # max gray value
+        f.write("P2\n#"+comment+"\n")
+        f.write(str(self.m_colonnes * dialation)+" ")
+        f.write(str(self.n_lignes * dialation)+"\n2\n")
+
+        for i in range(0,self.n_lignes):
+            for k1 in range(dialation):
+                for j in range(0,self.m_colonnes):
+                    for k2 in range(dialation):
+                        f.write(str(abs(2 - self.grid[i][j]))+" ")
+                f.write("\n")
+        f.close()
+        os.system("open "+name)
