@@ -89,7 +89,7 @@ class Grid:
             #generation d'un nom 
             name = "output/grid_"+str(len(os.listdir("output")))+".bmp"
         f = open(name, "w")
-        dialation = 512 // min(self.m_colonnes, self.n_lignes)
+        dialation = max(512 // min(self.m_colonnes, self.n_lignes), 1)
 
         #header :
         # P2
@@ -119,19 +119,27 @@ class Grid:
 
             Output format: .avi
         """
+        fps = 10
+
         image_folder = "output"
         files = os.listdir(image_folder)
+        n_files = len(files)
         os.system("mkdir -p videos")
         video_name = "videos/video"+str(len(os.listdir("videos")))+".avi"
 
-        if len(files) < 3:
+        #FPS adjustment
+        if n_files < 3:
             print("Error: not enough files to generate video") 
             return
+        elif n_files < 10: 
+            fps = 2
+        elif n_files < 50: #ensure video time of 5 seconds
+            fps = n_files//5
 
         images = [img for img in files if img.endswith(".bmp")]
         frame = cv2.imread(os.path.join(image_folder, images[0]))
         height, width, layers = frame.shape
-        video = cv2.VideoWriter(video_name, 0, 3, (width,height))
+        video = cv2.VideoWriter(video_name, 0, fps, (width,height))
 
         for image in images:
             video.write(cv2.imread(os.path.join(image_folder, image)))
