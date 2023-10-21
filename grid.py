@@ -5,6 +5,9 @@ import cv2
 
 class Grid:
     def __init__(self, n_lignes, m_colonnes, contrainte_l = None, contrainte_c = None):
+        """
+            Initialisation de l'objet Grid
+        """
         if (contrainte_c == None):
             contrainte_c = [[]]*m_colonnes
         if (contrainte_l == None):
@@ -14,16 +17,23 @@ class Grid:
         self.m_colonnes = m_colonnes
         self.contrainte_c = contrainte_c #liste de listes
         self.contrainte_l = contrainte_l #liste de listes
+        #initialisation d'une grille vide (avec des 0)
         self.grid = []
         for i in range(n_lignes):
             self.grid.append([0] * m_colonnes)
     
     def print_line(self):
+        """
+            Affichage d'une ligne de '-'
+        """
         for j in range(0, self.m_colonnes*4+1):
             print("-",end="")
         print()
 
     def print_grid(self):
+        """
+            Affichage ligne par ligne de la grille
+        """
         self.print_line()
         for i in range(0,self.n_lignes):
             print("|",end="")
@@ -104,7 +114,15 @@ class Grid:
             for k1 in range(dialation):
                 for j in range(0,self.m_colonnes):
                     for k2 in range(dialation):
-                        f.write(str(abs(2 - self.grid[i][j]))+" ")
+                        #black
+                        color = "0"
+                        #gray (uncolored)
+                        if (self.grid[i][j] == 0):
+                            color = "1"
+                        #white
+                        elif (self.grid[i][j] == 1):
+                            color = "2"
+                        f.write(color+" ")
                 f.write("\n")
         f.close()
 
