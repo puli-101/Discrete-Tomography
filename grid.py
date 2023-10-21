@@ -1,5 +1,7 @@
 import datetime
 import os
+import moviepy.video.io.ImageSequenceClip
+import cv2
 
 class Grid:
     def __init__(self, n_lignes, m_colonnes, contrainte_l = None, contrainte_c = None):
@@ -78,16 +80,14 @@ class Grid:
         m = len(column_constraints)
         return Grid(n,m,line_constraints,column_constraints)
     
-    def save_grid(self, name="", comment=""):
+    def save_grid(self, name="", comment="", openFile=False):
         """
             Methode pour transformer la grille actuelle en image
             de taille n * m
         """
         if name == "":
-            #generation d'un nom aleatoire
-            basename = "output/temp_grid"
-            suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
-            name = "_".join([basename, suffix])+".bmp"
+            #generation d'un nom 
+            name = "output/grid_"+str(len(os.listdir("output")))+".bmp"
         f = open(name, "w")
         dialation = 512 // min(self.m_colonnes, self.n_lignes)
 
@@ -107,4 +107,34 @@ class Grid:
                         f.write(str(abs(2 - self.grid[i][j]))+" ")
                 f.write("\n")
         f.close()
-        os.system("open "+name)
+
+        if openFile:
+            os.system("open "+name)
+    
+    @staticmethod
+    def save_video():
+        """
+            Generation d'une video a partir d'une suite d'images
+            stockes dans output/
+
+            Output format: .avi
+        """
+        image_folder = "output"
+        files = os.listdir(image_folder)
+        os.system("mkdir -p videos")
+        video_name = "videos/video"+str(len(os.listdir("videos")))+".avi"
+
+        if len(files) < 3:
+            print("Error: not enough files to generate video") 
+            return
+
+        images = [img for img in files if img.endswith(".bmp")]
+        frame = cv2.imread(os.path.join(image_folder, images[0]))
+        height, width, layers = frame.shape
+        video = cv2.VideoWriter(video_name, 0, 3, (width,height))
+
+        for image in images:
+            video.write(cv2.imread(os.path.join(image_folder, image)))
+
+        cv2.destroyAllWindows()
+        video.release()

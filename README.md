@@ -1,4 +1,11 @@
 # Tomographie Discrète 
+## 0 Pre-requis
+
+    pip install opencv-python
+
+et
+
+VLC pour regarder les videos
 
 ## 1 Methode Incomplete de Resolution
 ### 1.1 Premiere etape
