@@ -39,3 +39,4 @@ class Solver:
             else:
                 v = line_is_colorable(ligne, j, )
         return v 
+    
