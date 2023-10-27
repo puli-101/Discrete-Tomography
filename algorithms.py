@@ -28,15 +28,18 @@ class Solver:
             #if the current available size (j+1) matches the size of the last block of the sequence
             #then we can color the line only if that's the only block in the sequence (i.e. l == 0)
             #and there isn't any other block already
-            v = l == 0 
+            v = (l == 0 )
             for x in ligne[:j+1]:
                 v = v and (x == 0)
         elif j > s[l - 1] - 1:
             #si la case est blanche...
             if ligne[j] == 0:
                 #!!!!!!!!!!!!!!!!!!
-                v = line_is_colorable(ligne, j - s[l - 1], l - 1, T, s)
+                v = self.line_is_colorable(ligne, j - s[l - 1], l - 1, s)
             else:
-                v = line_is_colorable(ligne, j, )
+                if ligne[j]==2 :
+                    v=self.line_is_colorable(ligne,j-s[l-1]-1,l-1,s)
+                else:
+                    v=self.line_is_colorable(ligne,j-s[l-1]-2,l-1,s)
         return v 
     
