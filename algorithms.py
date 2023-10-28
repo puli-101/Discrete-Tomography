@@ -8,7 +8,7 @@ class Solver:
         self.n = grid.n_lignes #access plus directe
         self.m = grid.m_colonnes
 
-    def line_is_colorable(self,ligne, T, j, l, s):
+    def line_is_colorable(self, T, j, l, s):
         """
             On considere la i-eme ligne 
             les j+1 premiers cases de la i-eme ligne
@@ -30,7 +30,7 @@ class Solver:
         elif j > s[l - 1] - 1:
             #IL FAUT TESTER J > 0
 
-            blanche, noire = False
+            blanche = noire = False
             #CAS 1 On considere la case comme etant blanche
             if (j-1,l) in T.keys(): 
                 blanche = T[j-1,l]
@@ -69,13 +69,13 @@ class Solver:
             for k in range(0,j):
                 T[j,l] = T[j,l] and (line[k] != Color.WHITE)
         elif j > s[l - 1] - 1:
-            white,noire = False
+            white = noire = False
             #CAS 1 Soit la case est blanche ou elle est incolore et on teste si on peut colorier en blanc
             if line[j] != Color.BLACK:
                 if (j-1,l) in T.keys(): 
                     white = T[j-1,l]
                 else: 
-                    T[j-1,l] = white = (j - 1 >= 0) and self.line_is_colorable(line,T,j-1,l,s)
+                    T[j-1,l] = white = (j - 1 >= 0) and self.line_is_colorable_generalized(line,T,j-1,l,s)
             #CAS 2 Soit elle est noire ou elle est incolore et on teste si on peut colorier en noir
             elif line[j] != Color.WHITE:
                 if (j - s[l-1] - 1, l-1) in T.keys():
@@ -88,7 +88,7 @@ class Solver:
                     enough_space = enough_space and (line[j - s[l-1] - 1] != Color.BLACK) #on ne peut pas avoir 2 blocks contigus
                     #si on a assez de place alors on teste si on peut placer les autres blocks aussi
                     if enough_space:
-                        T[(j - s[l-1] - 1, l-1)] = (j - s[l-1] - 1 >= 0) and self.line_is_colorable(line,T,j - s[l-1] - 1,l-1,s)
+                        T[(j - s[l-1] - 1, l-1)] = (j - s[l-1] - 1 >= 0) and self.line_is_colorable_generalized(line,T,j - s[l-1] - 1,l-1,s)
 
                     noire = enough_space and T[(j - s[l-1] - 1, l-1)]
             T[j,l] = white or noire 

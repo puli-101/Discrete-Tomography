@@ -2,6 +2,7 @@ import datetime
 import os
 import moviepy.video.io.ImageSequenceClip
 import cv2
+from enum import Enum
 
 class Color(Enum):
     WHITE = 1
