@@ -21,8 +21,8 @@ class Grid:
         
         self.n_lignes =  n_lignes
         self.m_colonnes = m_colonnes
-        self.contrainte_c = contrainte_c #liste de listes
-        self.contrainte_l = contrainte_l #liste de listes
+        self.contrainte_c = contrainte_c.copy() #liste de listes
+        self.contrainte_l = contrainte_l.copy() #liste de listes
         #initialisation d'une grille vide (avec des 0)
         self.grid = []
         for i in range(n_lignes):
@@ -170,3 +170,10 @@ class Grid:
 
         cv2.destroyAllWindows()
         video.release()
+    
+    def deepcopy(self):
+        G = Grid(self.n_lignes, self.m_colonnes,self.contrainte_l,self.contrainte_c)
+        for i in range(0,self.n_lignes):
+            for j in range(0,self.m_colonnes):
+                G.grid[i][j] = self.grid[i][j]
+        return G 
