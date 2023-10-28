@@ -67,28 +67,29 @@ class Solver:
             T[j,l] = (l == 1)
             #and the rest of the segment hasn't been colored differently
             for k in range(0,j):
-                T[j,l] = T[j,l] and (line[k] == Color.UNCOLORED)
+                T[j,l] = T[j,l] and (line[k] != Color.WHITE)
         elif j > s[l - 1] - 1:
-            white_or_uncolored, noire = False
-            #CAS 1 Soit la case est deja colorie soit on considere la case comme etant blanche
-            if (j-1,l) in T.keys(): 
-                white_or_uncolored = T[j-1,l]
-            else: 
-                T[j-1,l] = white_or_uncolored = (j - 1 >= 0) and self.line_is_colorable(ligne,T,j-1,l,s)
-            #CAS 2 On considere la case comme etant noire
-            if (j - s[l-1] - 1, l-1) in T.keys():
-                noire = T[(j - s[l-1] - 1, l-1)]
-            else:
-                #on teste si on peut placer le dernier block
-                enough_space = (j - s[l-1] - 1 >= 0)
-                for k in range(j - s[l-1], j):
-                    enough_space = enough_space and (line[k] == Color.UNCOLORED)
-                enough_space = enough_space and (line[j - s[l-1] - 1] != Color.BLACK) #on ne peut pas avoir 2 blocks contigus
-                #si on a assez de place alors on teste si on peut placer les autres blocks aussi
-                if enough_space:
-                    T[(j - s[l-1] - 1, l-1)] = (j - s[l-1] - 1 >= 0) and self.line_is_colorable(ligne,T,j - s[l-1] - 1,l-1,s)
+            white,noire = False
+            #CAS 1 Soit la case est blanche ou elle est incolore et on teste si on peut colorier en blanc
+            if line[j] != Color.BLACK:
+                if (j-1,l) in T.keys(): 
+                    white = T[j-1,l]
+                else: 
+                    T[j-1,l] = white = (j - 1 >= 0) and self.line_is_colorable(line,T,j-1,l,s)
+            #CAS 2 Soit elle est noire ou elle est incolore et on teste si on peut colorier en noir
+            elif line[j] != Color.WHITE:
+                if (j - s[l-1] - 1, l-1) in T.keys():
+                    noire = T[(j - s[l-1] - 1, l-1)]
+                else:
+                    #on teste si on peut placer le dernier block
+                    enough_space = (j - s[l-1] - 1 >= 0)
+                    for k in range(j - s[l-1], j):
+                        enough_space = enough_space and (line[k] != Color.WHITE)
+                    enough_space = enough_space and (line[j - s[l-1] - 1] != Color.BLACK) #on ne peut pas avoir 2 blocks contigus
+                    #si on a assez de place alors on teste si on peut placer les autres blocks aussi
+                    if enough_space:
+                        T[(j - s[l-1] - 1, l-1)] = (j - s[l-1] - 1 >= 0) and self.line_is_colorable(line,T,j - s[l-1] - 1,l-1,s)
 
-                noire = enough_space and T[(j - s[l-1] - 1, l-1)]
-                
-            T[j,l] = white_or_uncolored or noire 
+                    noire = enough_space and T[(j - s[l-1] - 1, l-1)]
+            T[j,l] = white or noire 
         return T[j,l]
