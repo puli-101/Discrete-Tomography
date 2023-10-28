@@ -3,6 +3,11 @@ import os
 import moviepy.video.io.ImageSequenceClip
 import cv2
 
+class Color(Enum):
+    WHITE = 1
+    BLACK = 2
+    UNCOLORED = 3 
+
 class Grid:
     def __init__(self, n_lignes, m_colonnes, contrainte_l = None, contrainte_c = None):
         """
@@ -20,7 +25,7 @@ class Grid:
         #initialisation d'une grille vide (avec des 0)
         self.grid = []
         for i in range(n_lignes):
-            self.grid.append([0] * m_colonnes)
+            self.grid.append([Color.UNCOLORED] * m_colonnes)
     
     def print_line(self):
         """
@@ -38,9 +43,9 @@ class Grid:
         for i in range(0,self.n_lignes):
             print("|",end="")
             for j in range(0,self.m_colonnes):
-                if (self.grid[i][j] == 1):
+                if (self.grid[i][j] == Color.WHITE):
                     print(" W |",end="")
-                elif (self.grid[i][j] == 2):
+                elif (self.grid[i][j] == Color.BLACK):
                     print(" B |",end="")
                 else:
                     print("   |",end="")
@@ -117,10 +122,10 @@ class Grid:
                         #black
                         color = "0"
                         #gray (uncolored)
-                        if (self.grid[i][j] == 0):
+                        if (self.grid[i][j] == Color.UNCOLORED):
                             color = "1"
                         #white
-                        elif (self.grid[i][j] == 1):
+                        elif (self.grid[i][j] == Color.WHITE):
                             color = "2"
                         f.write(color+" ")
                 f.write("\n")
