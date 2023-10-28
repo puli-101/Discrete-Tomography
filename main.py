@@ -18,9 +18,13 @@ if __name__ == "__main__":
     
     #Test fonctions avec la grille dans l'enonce
     for i in range(0,G.n_lignes):
+        G.grid[i][3] = Color.WHITE
+        G.grid[i][2] = Color.WHITE
         ligne = G.grid[i]
+        print(ligne)
         T = {}
         constraints = G.contrainte_l[i]
+        print(constraints)
         res = solver.line_is_colorable_generalized(ligne,T, G.m_colonnes - 1, len(constraints), constraints)
         print("Line",i,"is colorable (Generalized)")
     
