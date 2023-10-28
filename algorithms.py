@@ -1,7 +1,10 @@
 from grid import *
+import logging, sys
 
 class Solver:
-    def __init__(self, grid=None):
+    def __init__(self, grid=None, debug=True):
+        if debug:
+            logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
         if grid == None:
             grid = Grid.read_file("instances/1.txt")
         self.G = grid
@@ -55,13 +58,17 @@ class Solver:
             retour : Vrai si on peut colorier les j+1 premiers cases d'une certaine ligne
                 avec les l premiers blocks de s
         """
+        logging.debug((j,l))
         if l == 0:
+            logging.debug("Case 0 ! No more blocks to place")
             #we dont have to place any block -> OK
             T[j,l] = True 
         elif j < s[l - 1] - 1: 
+            logging.debug("Case 1 ! Bigger block than space available")
             #we're trying to place a block bigger than the space we have available
             T[j,l] = False
         elif j == s[l - 1] - 1:
+            logging.debug("Case 3 ! Current available size matches block")
             #if the current available size (j+1) matches the size of the last block of the sequence
             #then we can color the line only if that's the only block in the sequence (i.e. l == 0)
             T[j,l] = (l == 1)
@@ -69,15 +76,18 @@ class Solver:
             for k in range(0,j):
                 T[j,l] = T[j,l] and (line[k] != Color.WHITE)
         elif j > s[l - 1] - 1:
+            logging.debug("Case 4 ! Block may fit with extra space")
             white = noire = False
             #CAS 1 Soit la case est blanche ou elle est incolore et on teste si on peut colorier en blanc
             if line[j] != Color.BLACK:
+                logging.debug("Is not black")
                 if (j-1,l) in T.keys(): 
                     white = T[j-1,l]
                 else: 
                     T[j-1,l] = white = (j - 1 >= 0) and self.line_is_colorable_generalized(line,T,j-1,l,s)
             #CAS 2 Soit elle est noire ou elle est incolore et on teste si on peut colorier en noir
-            elif line[j] != Color.WHITE:
+            if line[j] != Color.WHITE:
+                logging.debug("Is not white")
                 if (j - s[l-1] - 1, l-1) in T.keys():
                     noire = T[(j - s[l-1] - 1, l-1)]
                 else:

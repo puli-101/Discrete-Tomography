@@ -2,6 +2,9 @@
 ## 0 Pre-requis
 
     pip install opencv-python
+    pip install moviepy
+    pip install ez_setup
+
 
 et
 

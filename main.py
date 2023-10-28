@@ -33,11 +33,12 @@ if __name__ == "__main__":
         else:
             print("Line",i,"is not colorable (Generalized)")
     
+    
 
+    
     G.print_grid()
 
 
 
     #G.save_grid()
     #Grid.save_video()
-
