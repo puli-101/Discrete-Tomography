@@ -109,16 +109,19 @@ class Grid:
         m = len(column_constraints)
         return Grid(n,m,line_constraints,column_constraints)
     
-    def save_grid(self, name="", comment="", openFile=False):
+    def save_grid(self, name="", comment="", openFile=False,dialate=True):
         """
             Methode pour transformer la grille actuelle en image
             de taille n * m
         """
         if name == "":
             #generation d'un nom 
-            name = "output/grid_"+str(len(os.listdir("output")))+".bmp"
+            name = "output/grid_"+str(len(os.listdir("output")))+".pgm"
         f = open(name, "w")
-        dialation = max(512 // min(self.m_colonnes, self.n_lignes), 1)
+        dialation = 1
+        
+        if dialate:
+            dialation = max(512 // min(self.m_colonnes, self.n_lignes), 1)
 
         #header :
         # P2
@@ -173,12 +176,12 @@ class Grid:
         elif n_files < 50: #ensure video time of 5 seconds
             fps = n_files//5
 
-        images = [img for img in files if img.endswith(".bmp")]
+        images = [img for img in files if img.endswith(".pgm")]
         frame = cv2.imread(os.path.join(image_folder, images[0]))
         height, width, layers = frame.shape
         video = cv2.VideoWriter(video_name, 0, fps, (width,height))
 
-        images.sort(key=lambda nm: int(nm.removeprefix("grid_").removesuffix(".bmp")) )
+        images.sort(key=lambda nm: int(nm.removeprefix("grid_").removesuffix(".pgm")) )
         for image in images:
             print(image)
             video.write(cv2.imread(os.path.join(image_folder, image)))
@@ -208,3 +211,8 @@ class Grid:
         f.write(str(self.contrainte_l)+"\n")
         f.write(str(self.contrainte_c)+"\n")
         f.close()
+    
+    def reset(self):
+        for i in range(0,self.n_lignes):
+            for j in range(0,self.m_colonnes):
+                G.grid[i][j] = Color.UNCOLORED

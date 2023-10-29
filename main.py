@@ -1,5 +1,6 @@
 from src.grid import *
 from src.algorithms import *
+from src.image import *
 import src.debugging as db
 import sys
 import os
@@ -41,3 +42,6 @@ if __name__ == "__main__":
     if db.GRAPHICS_DEBUG:
         Grid.save_video()
     G2.print_txt()
+    print("-- Loaded img :")
+    G3 = Image.to_grid('input/grid_25.pgm')
+    G3.print_grid()
