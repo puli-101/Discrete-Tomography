@@ -3,7 +3,7 @@ import os
 import moviepy.video.io.ImageSequenceClip
 import cv2
 from enum import Enum
-import debugging as db
+import src.debugging as db
 
 class Color(Enum):
     WHITE = 1
@@ -192,3 +192,19 @@ class Grid:
             for j in range(0,self.m_colonnes):
                 G.grid[i][j] = self.grid[i][j]
         return G 
+    
+    def print_txt(self):
+        f = open("output/output.txt", "w")
+        for line in self.grid:
+            for c in line:
+                if c == Color.WHITE:
+                    f.write("0")
+                elif c == Color.BLACK:
+                    f.write("1")
+                else:
+                    f.write("-")
+            f.write("\n")
+        f.write(str(self.m_colonnes)+" "+str(self.n_lignes)+"\n")
+        f.write(str(self.contrainte_l)+"\n")
+        f.write(str(self.contrainte_c)+"\n")
+        f.close()

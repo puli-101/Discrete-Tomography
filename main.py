@@ -1,6 +1,6 @@
-from grid import *
-from algorithms import *
-import debugging as db
+from src.grid import *
+from src.algorithms import *
+import src.debugging as db
 import sys
 import os
 
@@ -16,6 +16,7 @@ if __name__ == "__main__":
             elif option == "debug=true":
                 db.DEBUG = True 
             elif option == "img_debug=true":
+                os.system("rm -rf output/*")
                 db.GRAPHICS_DEBUG = True 
             elif option == "color_printing=true":
                 db.COLOR_PRINTING = True
@@ -39,3 +40,4 @@ if __name__ == "__main__":
 
     if db.GRAPHICS_DEBUG:
         Grid.save_video()
+    G2.print_txt()

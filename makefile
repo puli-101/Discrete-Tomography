@@ -1,4 +1,7 @@
-clean:
+INPUT?=video0.avi
+OUTPUT?=video
+
+clean-img:
 	rm -rf output/*
 
 clean-vid:
@@ -7,6 +10,10 @@ clean-vid:
 clean-all:
 	rm -rf output/* videos/*
 
-video:
-	mkdir -p videos
-	ffmpeg -framerate 5 -pattern_type glob -i 'output/*.bmp' -c:v libx264 -pix_fmt yuv420p out.mp4
+mp4:
+	ffmpeg -i videos/$(INPUT) -c:v mpeg4 videos/$(OUPUT).mp4
+
+gif:
+	ffmpeg -i videos/$(INPUT) -r 15 \
+	-vf scale=512:-1 \
+	videos/$(OUTPUT).gif

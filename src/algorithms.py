@@ -1,5 +1,5 @@
-from grid import *
-from debugging import *
+from src.grid import *
+from src.debugging import *
 
 class Solver:
     def __init__(self, grid=None):
@@ -172,9 +172,21 @@ class Solver:
         return self.colorier(line,constraints,G)
     
     def colorierCol(self, G, j):
+        local_debug = GRAPHICS_DEBUG
+        if local_debug:
+            toggle(graphics=False)
+        
         colonne = [line[j] for line in G.grid]
         constraints = G.contrainte_c[j]
-        return self.colorier(line,constraints,G)
+        ok,modif = self.colorier(colonne,constraints,G)
+
+        if local_debug:
+            toggle(graphics=True)
+        #mis a jour de la colonne
+        for i in modif:
+            G.grid[i][j] = colonne[i]
+            log_img(G)
+        return ok,modif
 
     def coloration(self, G, n, m):
         """
@@ -198,12 +210,12 @@ class Solver:
                     return (False,None)
                 colonnesAVoir += nouveaux
             lignesAVoir = []
-            #for j in colonnesAVoir:
-            #    (ok,nouveaux) = self.colorierCol(G2,j)
-            #    if not(ok):
-            #        return (False,None)
-            #    lignesAVoir += nouveaux
-            #colonnesAVoir = []
+            for j in colonnesAVoir:
+                (ok,nouveaux) = self.colorierCol(G2,j)
+                if not(ok):
+                    return (False,None)
+                lignesAVoir += nouveaux
+            colonnesAVoir = []
 
         ok = self.check(G2)
         #si on a colorie tous les cases (check) alors OK = TRUE
