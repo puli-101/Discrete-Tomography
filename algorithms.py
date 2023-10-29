@@ -1,10 +1,20 @@
 from grid import *
 import logging, sys
 
+DEBUG = False
+GRAPHICS_DEBUG = False
+
+def log(msg='', end='\n',override=False):
+    msg = str(msg)
+    if DEBUG or override:
+        log(msg,end=end)
+
+def graph_debug(G):
+    if GRAPHICS_DEBUG:
+        G.save_grid()
+
 class Solver:
-    def __init__(self, grid=None, debug=False):
-        if debug:
-            logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+    def __init__(self, grid=None):
         if grid == None:
             grid = Grid.read_file("instances/1.txt")
         self.G = grid
@@ -58,56 +68,55 @@ class Solver:
             retour : Vrai si on peut colorier les j+1 premiers cases d'une certaine ligne
                 avec les l premiers blocks de s
         """
-        logging.debug((j,l))
+        log((j,l))
         if l == 0:
-            logging.debug("Case 0 ! No more blocks to place")
+            log("Case 0 ! No more blocks to place")
             #we dont have to place any block -> OK
             T[j,l] = True 
         elif j < s[l - 1] - 1: 
-            logging.debug("Case 1 ! Bigger block than space available")
+            log("Case 1 ! Bigger block than space available")
             #we're trying to place a block bigger than the space we have available
             T[j,l] = False
         elif j == s[l - 1] - 1:
-            logging.debug("Case 3 ! Current available size matches block")
+            log("Case 3 ! Current available size matches block")
             #if the current available size (j+1) matches the size of the last block of the sequence
             #then we can color the line only if that's the only block in the sequence (i.e. l == 0)
             T[j,l] = (l == 1)
             #and the rest of the segment hasn't been colored differently
             for k in range(0,j+1):
                 T[j,l] = T[j,l] and (line[k] != Color.WHITE)
-            logging.debug("-> "+str(T[j,l]))
+            log("-> "+str(T[j,l]))
         elif j > s[l - 1] - 1:
-            logging.debug("Case 4 ! Block may fit with extra space")
+            log("Case 4 ! Block may fit with extra space")
             white = noire = False
             #CAS 1 Soit la case est blanche ou elle est incolore et on teste si on peut colorier en blanc
             if line[j] != Color.BLACK:
-                logging.debug("Is not black")
+                log("Is not black")
                 if (j-1,l) in T.keys(): 
                     white = T[j-1,l]
                 else: 
                     T[j-1,l] = white = (j - 1 >= 0) and self.line_is_colorable_generalized(line,T,j-1,l,s)
-                    logging.debug("return"+str((j,l)))
+                    log("return"+str((j,l)))
             #CAS 2 Soit elle est noire ou elle est incolore et on teste si on peut colorier en noir
             if line[j] != Color.WHITE:
-                logging.debug("Is not white")
+                log("Is not white")
                 if (j - s[l-1] - 1, l-1) in T.keys():
                     noire = T[(j - s[l-1] - 1, l-1)]
                 else:
                     #on teste si on peut placer le dernier block
-                    enough_space = (j - s[l-1] - 1 >= 0)
-                    logging.debug("Enough space? "+str(enough_space))
+                    enough_space = True 
                     for k in range(j - s[l-1] + 1, j+1):
-                        print(str(k),end=" ")
+                        log(str(k),end=" ")
                         enough_space = enough_space and (line[k] != Color.WHITE)
-                    print()
-                    logging.debug("Enough space?? "+str(enough_space))
-                    enough_space = enough_space and (line[j - s[l-1] - 1] != Color.BLACK) #on ne peut pas avoir 2 blocks contigus
+                    log()
+                    log("Enough space? "+str(enough_space))
+                    enough_space = enough_space and (line[j - s[l-1]] != Color.BLACK) #on ne peut pas avoir 2 blocks contigus
                     #si on a assez de place alors on teste si on peut placer les autres blocks aussi
                     if enough_space:
-                        logging.debug("Enough space!")
+                        log("Enough space!")
                         T[(j - s[l-1] - 1, l-1)] = (j - s[l-1] - 1 >= 0) and self.line_is_colorable_generalized(line,T,j - s[l-1] - 1,l-1,s)
                     else:
-                        logging.debug("Not Enough space !")
+                        log("Not Enough space !")
                     noire = enough_space and T[(j - s[l-1] - 1, l-1)]
             T[j,l] = white or noire 
         return T[j,l]
@@ -126,6 +135,8 @@ class Solver:
     def colorier(self,lst,constraints):
         ok = True
         modif = []
+        log(constraints)
+        log(lst)
         for i in range(0, len(lst)):
             if lst[i] != Color.UNCOLORED:
                 continue
@@ -138,27 +149,34 @@ class Solver:
             T = {} 
             white = self.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             if white and black:
+                log("No info")
+                lst[i] = Color.UNCOLORED
                 continue
             elif white and not(black):
+                log("White")
                 lst[i] = Color.WHITE
                 modif.append(i)
             elif black and not(white):
+                log("Black")
                 lst[i] = Color.BLACK 
                 modif.append(i)
             else:
+                log("Nono")
+                log("!!!! - ",lst)
                 return False,[]
+        log(lst)
         return True,modif
 
 
     def colorierLig(self, G, i):
         line = G.grid[i]
         constraints = G.contrainte_l[i]
-        self.colorier(line,constraints)
+        return self.colorier(line,constraints)
     
     def colorierCol(self, G, j):
         colonne = [line[j] for line in G.grid]
         constraints = G.contrainte_c[j]
-        self.colorier(line,constraints)
+        return self.colorier(line,constraints)
 
     def coloration(self, G, n, m):
         """
@@ -174,18 +192,20 @@ class Solver:
         lignesAVoir = range(0,n)
         colonnesAVoir = [] #range(0,m)
 
-        while len(lignesAVoir) > 0 or len(colonnesAVoir) > 0:
+        while len(lignesAVoir) > 0: #or len(colonnesAVoir) > 0:
             for i in lignesAVoir:
                 (ok,nouveaux) = self.colorierLig(G2,i) #Colorie par r´ecurrence un max de cases de la ligne i de G2
                 #ok=Faux si d´etection d’impossibilit´e, ok=Vrai sinon 
                 if not(ok):
                     return (False,None)
                 colonnesAVoir += nouveaux
+            lignesAVoir = []
             #for j in colonnesAVoir:
             #    (ok,nouveaux) = self.colorierCol(G2,j)
             #    if not(ok):
             #        return (False,None)
             #    lignesAVoir += nouveaux
+            #colonnesAVoir = []
 
         ok = self.check(G2)
         #si on a colorie tous les cases (check) alors OK = TRUE
