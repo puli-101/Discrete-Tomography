@@ -5,6 +5,8 @@
     pip install moviepy
     pip install ez_setup
 
+    sudo apt install ffmpeg
+
 
 et
 

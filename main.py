@@ -1,26 +1,41 @@
 from grid import *
 from algorithms import *
+import sys
 import os
 
 if __name__ == "__main__":
+    global DEBUG 
+    global GRAPHICS_DEBUG
+    inpt = 'instances/0.txt'
+
+    if len(sys.argv) > 1:
+        for option in sys.argv[1:]:
+            option = option.lower()
+            if option == "mkvid":
+                Grid.save_video()
+                exit()
+            elif option == "debug=true":
+                DEBUG = True 
+            elif option == "img_debug=true":
+                GRAPHICS_DEBUG = True 
+            elif option.startswith("input="):
+                inpt = option.removeprefix("input=")
+
+    
     #initialisation de l'environement
     os.system("mkdir -p output/")
-    #grille dans l'enonce
-    G = Grid.read_file("instances/0.txt")
+
+    #Chargement_d'une grille
+    G = Grid.read_file(inpt)
     solver = Solver(G)
     G.print_grid()
 
     ok,G2 = solver.coloration(G, G.n_lignes, G.m_colonnes)
-    
-    #T = {}
-    #G.grid[2][0] = Color.BLACK
-    #print(solver.line_is_colorable_generalized(G.grid[2],T,4,3,G.contrainte_l[2]))
 
     if ok != False:
         G2.print_grid()
     else:
         print("No solution")
 
-
-    #G.save_grid()
-    #Grid.save_video()
+    if GRAPHICS_DEBUG:
+        Grid.save_video()

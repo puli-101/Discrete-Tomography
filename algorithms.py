@@ -9,7 +9,7 @@ def log(msg='', end='\n',override=False):
     if DEBUG or override:
         log(msg,end=end)
 
-def graph_debug(G):
+def log_img(G):
     if GRAPHICS_DEBUG:
         G.save_grid()
 
@@ -132,13 +132,20 @@ class Solver:
                     return False
         return True
 
-    def colorier(self,lst,constraints):
+    def colorier(self,lst,constraints, G):
         ok = True
         modif = []
         log(constraints)
         log(lst)
         for i in range(0, len(lst)):
             if lst[i] != Color.UNCOLORED:
+                continue
+            #si on n'a pas de contraintes alors immediatement toute la ligne est blanche
+            elif len(constraints) == 0:
+                log("White")
+                lst[i] = Color.WHITE
+                log_img(G)
+                modif.append(i)
                 continue
             #check if we can color black
             lst[i] = Color.BLACK
@@ -155,13 +162,16 @@ class Solver:
             elif white and not(black):
                 log("White")
                 lst[i] = Color.WHITE
+                log_img(G)
                 modif.append(i)
             elif black and not(white):
                 log("Black")
                 lst[i] = Color.BLACK 
+                log_img(G)
                 modif.append(i)
             else:
                 log("Nono")
+                log_img(G)
                 log("!!!! - ",lst)
                 return False,[]
         log(lst)
@@ -171,12 +181,12 @@ class Solver:
     def colorierLig(self, G, i):
         line = G.grid[i]
         constraints = G.contrainte_l[i]
-        return self.colorier(line,constraints)
+        return self.colorier(line,constraints,G)
     
     def colorierCol(self, G, j):
         colonne = [line[j] for line in G.grid]
         constraints = G.contrainte_c[j]
-        return self.colorier(line,constraints)
+        return self.colorier(line,constraints,G)
 
     def coloration(self, G, n, m):
         """

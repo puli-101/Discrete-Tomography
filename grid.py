@@ -165,7 +165,9 @@ class Grid:
         height, width, layers = frame.shape
         video = cv2.VideoWriter(video_name, 0, fps, (width,height))
 
+        images.sort(key=lambda nm: int(nm.removeprefix("grid_").removesuffix(".bmp")) )
         for image in images:
+            #print(image)
             video.write(cv2.imread(os.path.join(image_folder, image)))
 
         cv2.destroyAllWindows()
