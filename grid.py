@@ -3,6 +3,7 @@ import os
 import moviepy.video.io.ImageSequenceClip
 import cv2
 from enum import Enum
+import debugging as db
 
 class Color(Enum):
     WHITE = 1
@@ -28,7 +29,7 @@ class Grid:
         for i in range(n_lignes):
             self.grid.append([Color.UNCOLORED] * m_colonnes)
     
-    def print_line(self):
+    def print_dash(self):
         """
             Affichage d'une ligne de '-'
         """
@@ -36,22 +37,34 @@ class Grid:
             print("-",end="")
         print()
 
+    def print_line(self, i):
+        """
+            affichage d'une ligne
+        """
+        print("|",end="")
+        for j in range(0,self.m_colonnes):
+            if (self.grid[i][j] == Color.WHITE):
+                if db.COLOR_PRINTING:
+                    print('\x1b[5;37;47m' + '   ' + '\x1b[0m'+'|',end="")
+                else:
+                    print(" W |",end="")
+            elif (self.grid[i][j] == Color.BLACK):
+                if db.COLOR_PRINTING:
+                    print('\x1b[5;30;40m' + '   ' + '\x1b[0m'+'|',end="")
+                else:
+                    print(" B |",end="")
+            else:
+                print("   |",end="")
+        print()
+
     def print_grid(self):
         """
             Affichage ligne par ligne de la grille
         """
-        self.print_line()
+        self.print_dash()
         for i in range(0,self.n_lignes):
-            print("|",end="")
-            for j in range(0,self.m_colonnes):
-                if (self.grid[i][j] == Color.WHITE):
-                    print(" W |",end="")
-                elif (self.grid[i][j] == Color.BLACK):
-                    print(" B |",end="")
-                else:
-                    print("   |",end="")
-            print()
-            self.print_line()
+            self.print_line(i)
+            self.print_dash()
         print("Line constraints:",self.contrainte_l)
         print("Column constraints:",self.contrainte_c)
     
@@ -167,7 +180,7 @@ class Grid:
 
         images.sort(key=lambda nm: int(nm.removeprefix("grid_").removesuffix(".bmp")) )
         for image in images:
-            #print(image)
+            print(image)
             video.write(cv2.imread(os.path.join(image_folder, image)))
 
         cv2.destroyAllWindows()
