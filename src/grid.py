@@ -188,6 +188,8 @@ class Grid:
 
         cv2.destroyAllWindows()
         video.release()
+
+        return video_name
     
     def deepcopy(self):
         G = Grid(self.n_lignes, self.m_colonnes,self.contrainte_l,self.contrainte_c)

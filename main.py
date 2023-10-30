@@ -36,12 +36,14 @@ if __name__ == "__main__":
 
     if ok != False:
         G2.print_grid()
+        G2.print_txt()
     else:
         print("No solution")
 
     if db.GRAPHICS_DEBUG:
-        Grid.save_video()
-    G2.print_txt()
-    print("-- Loaded img :")
-    G3 = Image.to_grid('input/grid_25.pgm')
-    G3.print_grid()
+        name = Grid.save_video()
+        os.system('make mp4 INPUT='+name)
+        os.system('make gif INPUT='+name)
+    #print("-- Loaded img :")
+    #G3 = Image.to_grid('input/grid_25.pgm')
+    #G3.print_grid()

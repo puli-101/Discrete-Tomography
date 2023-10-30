@@ -1,6 +1,6 @@
 # Tomographie Discrète 
 ## 0 Pre-requis
-
+    python version 3.9+
     pip install opencv-python
     pip install moviepy
     pip install ez_setup
