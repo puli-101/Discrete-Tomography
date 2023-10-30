@@ -160,18 +160,20 @@ class Solver:
             else:
                 log("Nono")
                 log_img(G)
-                log("!!!! - ",lst)
+                log("!!!! - "+str(lst))
                 return False,[]
         log(lst)
         return True,modif
 
 
     def colorierLig(self, G, i):
+        log("- Coloring line "+str(i))
         line = G.grid[i]
         constraints = G.contrainte_l[i]
         return self.colorier(line,constraints,G)
     
     def colorierCol(self, G, j):
+        log("- Coloring column "+str(j))
         local_debug = GRAPHICS_DEBUG
         if local_debug:
             toggle(graphics=False)
@@ -199,10 +201,10 @@ class Solver:
                 si on ne peut pas colorier partiellement G
         """
         G2 = G.deepcopy()
-        lignesAVoir = range(0,n)
-        colonnesAVoir = [] #range(0,m)
-
-        while len(lignesAVoir) > 0: #or len(colonnesAVoir) > 0:
+        lignesAVoir = list(range(0,n))
+        colonnesAVoir = list(range(0,m))
+        
+        while len(lignesAVoir) > 0 or len(colonnesAVoir) > 0:
             for i in lignesAVoir:
                 (ok,nouveaux) = self.colorierLig(G2,i) #Colorie par r´ecurrence un max de cases de la ligne i de G2
                 #ok=Faux si d´etection d’impossibilit´e, ok=Vrai sinon 
