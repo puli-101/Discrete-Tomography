@@ -2,6 +2,15 @@ INPUT?=videos/video0.avi
 
 OUTPUT?=video
 
+all: bin/convert_pgm
+
+bin/convert_pgm: src/img_handler/convert_pgm.c
+	mkdir -p bin
+	gcc -o $@ $<
+
+clean:
+	rm -rf bin/*
+
 clean-img:
 	rm -rf output/*
 

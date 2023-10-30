@@ -1,5 +1,6 @@
 # Tomographie Discrète 
-## 0 Pre-requis
+## 0 Avant propos 
+### Pre-requis
     python version 3.9+
     pip install opencv-python
     pip install moviepy
@@ -10,6 +11,16 @@
 et
 
 VLC pour regarder les videos
+
+### Modes d'execution
+
+python3.x main.py [options]
+
+avec les options suivantes:
+
+debug=true : pour une affichage detaillee de l'algorithme de resolution partiel
+img_debug=true : pour une generation d'une suite d'images et une video de la coloration sequentielle
+color_printing=true : pour une affichage en terminal de la grille avec des couleurs
 
 ## 1 Methode Incomplete de Resolution
 ### 1.1 Premiere etape
