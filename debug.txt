@@ -14,1624 +14,4472 @@ Column constraints: [[1, 1], [1, 2], [3], [1, 2], [1, 1]]
 - Coloring line 0
 [3]
 [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> False
 return(3, 1)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
 No info
+Try black 1: [<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Not Enough space !
+Could the cell 4 be black? False
+Try white 1: [<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> False
 return(3, 1)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 1 2 3 
 Enough space? False
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 1)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
 No info
+Try black 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> False
 return(3, 1)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 1 2 3 
 Enough space? False
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 1)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 2 3 4 
 Enough space? False
 Not Enough space !
+Could the cell 4 be black? False
 Black
+Try black 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
+Could the cell 3 be white? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? False
 Not Enough space !
+Could the cell 4 be black? False
 No info
+Try black 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
+Could the cell 4 be white? True
 No info
 [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 - Coloring line 1
 [1, 1, 1]
 [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 3)
 Case 3 ! Current available size matches block
 -> False
 return(1, 3)
-Is not white
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
 return(2, 3)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 3)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 3)
 Case 3 ! Current available size matches block
 -> False
 return(1, 3)
-Is not white
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 2)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 3)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 3)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+Could the cell 3 be black? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
+Could the cell 4 be black? False
 Black
+Try black 1: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 3)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
 return(2, 3)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
 return(3, 3)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? False
+Try white 1: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 3)
 Case 3 ! Current available size matches block
 -> False
 return(1, 3)
+Could the cell 1 be white? False
 return(2, 3)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 3)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? False
+Could the cell 3 be black? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
+Could the cell 4 be black? True
 White
+Try black 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 3)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 3)
 Case 3 ! Current available size matches block
 -> False
 return(1, 3)
+Could the cell 1 be white? False
 return(2, 3)
+Could the cell 2 be white? False
 return(3, 3)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
+Could the cell 3 be black? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? False
+Could the cell 4 be black? False
 Black
+Try black 3: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
 3 
 Enough space? True
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 3)
+Could the cell 3 be white? False
 return(4, 3)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
+Could the cell 4 be black? True
 White
+Try black 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
 (4, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 3)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 3)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 3)
+Could the cell 3 be white? False
 return(4, 3)
+Could the cell 4 be white? False
 Black
 [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>]
 - Coloring line 2
 [3]
 [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> False
 return(3, 1)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
 No info
+Try black 1: [<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Not Enough space !
+Could the cell 4 be black? False
+Try white 1: [<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> False
 return(3, 1)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 1 2 3 
 Enough space? False
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 1)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
 No info
+Try black 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> False
 return(3, 1)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 1 2 3 
 Enough space? False
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 1)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 2 3 4 
 Enough space? False
 Not Enough space !
+Could the cell 4 be black? False
 Black
+Try black 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
+Could the cell 3 be white? True
 return(4, 1)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 2 3 4 
 Enough space? False
 Not Enough space !
+Could the cell 4 be black? False
 No info
+Try black 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
 2 3 4 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 4 be black? True
+Try white 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
 (4, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 1)
 Case 3 ! Current available size matches block
 -> True
 return(3, 1)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 1 2 3 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
 return(4, 1)
+Could the cell 4 be white? True
 No info
 [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 - Coloring line 3
 [1, 1]
 [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
-Is not white
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
-Is not white
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
 No info
+Try black 1: [<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? True
+Try white 1: [<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
-White
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+No info
+Try black 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
+Could the cell 2 be white? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
 return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
 No info
+Try black 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
 return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
+Could the cell 3 be white? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
 return(2, 1)
-Is not white
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
 No info
+Try black 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
 return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
 return(2, 1)
-Is not white
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
+Could the cell 4 be white? True
 No info
-[<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+[<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 - Coloring line 4
 [1, 1]
 [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
-Is not white
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
-Is not white
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> False
+Could the cell 2 be black? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? False
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
 No info
+Try black 1: [<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? True
+Try white 1: [<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
-White
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+No info
+Try black 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Not Enough space !
+Could the cell 3 be black? False
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 2: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
+Could the cell 2 be white? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
 return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
 No info
+Try black 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
 return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
-ffmpeg -y -i videos/video3.avi -c:v mpeg4 videos/video.mp4 
-ffmpeg -y -i videos/video3.avi -r 15 \
--vf scale=512:-1 \
-videos/video.gif
 Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
+Could the cell 3 be white? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
 return(2, 1)
-Is not white
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
 No info
+Try black 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
 return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
 return(2, 1)
-Is not white
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 0)
 Case 0 ! No more blocks to place
+Could the cell 2 be black? True
+Could the cell 4 be black? True
+Try white 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
 (0, 2)
 Case 3 ! Current available size matches block
 -> False
 return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Enough space!
 (0, 1)
 Case 3 ! Current available size matches block
 -> True
+Could the cell 2 be black? True
 return(3, 2)
-Is not white
+Could the cell 3 be white? True
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
+Could the cell 4 be white? True
 No info
-[<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+[<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 - Coloring column 0
 [1, 1]
 [<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? False
 return(4, 2)
-Is not white
+Could the cell 4 be white? False
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? False
+Try white 0: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
 (4, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
 (3, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
 (2, 2)
-Case 4 ! Block may fit with extra space
-Is not black
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
 (1, 2)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
 return(2, 2)
-Is not white
+Could the cell 2 be white? False
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
+Could the cell 2 be black? False
 return(3, 2)
-Is not white
+Could the cell 3 be white? False
+Could the cell 3 be black?
 3 
 Enough space? True
 Enough space!
 (1, 1)
-Case 4 ! Block may fit with extra space
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
 1 
 Enough space? True
 Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
 return(4, 2)
-Is not white
+Could the cell 4 be white? True
+Could the cell 4 be black?
 4 
 Enough space? True
 Enough space!
 (2, 1)
-Case 4 ! Block may fit with extra space
-Is not black
-Is not white
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
 2 
 Enough space? True
 Not Enough space !
-Nono
-!!!! - [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
-No solution
-grid_0.pgm
-grid_1.pgm
-grid_2.pgm
-grid_3.pgm
-grid_4.pgm
-grid_5.pgm
-grid_6.pgm
-grid_7.pgm
-grid_8.pgm
-grid_9.pgm
+Could the cell 2 be black? False
+Could the cell 4 be black? True
+White
+Try black 2: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? False
+Try white 2: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+White
+Try black 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+No info
+Try black 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+- Coloring column 1
+[1, 2]
+[<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> False
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? False
+Could the cell 4 be black? False
+Black
+Try black 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? False
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+No info
+Try black 3: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 3: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? False
+Not Enough space !
+Could the cell 4 be black? False
+Black
+Try black 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+- Coloring column 2
+[3]
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 3: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+1 2 3 
+Enough space? True
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 1)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+2 3 4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 1)
+Case 3 ! Current available size matches block
+-> True
+return(3, 1)
+Could the cell 3 be white? True
+return(4, 1)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+2 3 4 
+Enough space? False
+Not Enough space !
+Could the cell 4 be black? False
+White
+Try black 4: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+2 3 4 
+Enough space? False
+Not Enough space !
+Could the cell 4 be black? False
+Try white 4: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 1)
+Case 3 ! Current available size matches block
+-> True
+return(3, 1)
+Could the cell 3 be white? True
+return(4, 1)
+Could the cell 4 be white? True
+White
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+- Coloring column 3
+[1, 2]
+[<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> False
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? False
+Could the cell 4 be black? False
+Black
+Try black 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+2 3 
+Enough space? False
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+No info
+Try black 3: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 3: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 3 ! Current available size matches block
+-> False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+1 2 
+Enough space? False
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? False
+Not Enough space !
+Could the cell 4 be black? False
+Black
+Try black 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+- Coloring column 4
+[1, 1]
+[<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Not Enough space !
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? False
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? False
+Try white 0: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? True
+White
+Try black 2: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be black?
+2 
+Enough space? True
+Not Enough space !
+Could the cell 2 be black? False
+Could the cell 4 be black? False
+Try white 2: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+White
+Try black 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+No info
+Try black 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+- Coloring column 2
+[3]
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+- Coloring column 0
+[1, 1]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+No info
+Try black 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+- Coloring column 1
+[1, 2]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+Try black 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? False
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+No info
+Try black 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+- Coloring column 2
+[3]
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+- Coloring column 3
+[1, 2]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+Try black 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 2: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? False
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+No info
+Try black 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+- Coloring column 4
+[1, 1]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+No info
+Try black 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+- Coloring column 2
+[3]
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+[<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+- Coloring line 0
+[3]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 2
+[3]
+[<Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+Try black 1: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 1)
+Case 3 ! Current available size matches block
+-> False
+return(3, 1)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+1 2 3 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
+return(4, 1)
+Could the cell 4 be white? True
+Try white 1: [<Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 1)
+Case 3 ! Current available size matches block
+-> False
+return(3, 1)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+1 2 3 
+Enough space? False
+Not Enough space !
+Could the cell 3 be black? False
+return(4, 1)
+Could the cell 4 be white? False
+Black
+Try black 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+1 2 3 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 3 be black? True
+return(4, 1)
+Could the cell 4 be white? True
+Try white 3: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+(4, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 1)
+Case 3 ! Current available size matches block
+-> False
+return(3, 1)
+Could the cell 3 be white? False
+return(4, 1)
+Could the cell 4 be white? False
+Black
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 0
+[3]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 3
+[1, 1]
+[<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 0: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+White
+Try black 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+White
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 3
+[1, 1]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 4
+[1, 1]
+[<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+Try black 0: [<Color.BLACK: 2>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 2)
+Case 3 ! Current available size matches block
+-> False
+return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Not Enough space !
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Not Enough space !
+Could the cell 1 be black? False
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 0: [<Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 2)
+Case 3 ! Current available size matches block
+-> False
+return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> False
+return(1, 1)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+No info
+Try black 1: [<Color.UNCOLORED: 3>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 1: [<Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 2)
+Case 3 ! Current available size matches block
+-> False
+return(1, 2)
+Could the cell 1 be white? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+No info
+Try black 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+Could the cell 4 be black?
+4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 3: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 2)
+Case 3 ! Current available size matches block
+-> False
+return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+No info
+Try black 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 2)
+Case 3 ! Current available size matches block
+-> False
+return(1, 2)
+Could the cell 1 be white? False
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+Could the cell 3 be black?
+3 
+Enough space? True
+Enough space!
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be white?
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+return(1, 1)
+Could the cell 1 be white? True
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+No info
+[<Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>, <Color.UNCOLORED: 3>]
+- Coloring line 0
+[3]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 3
+[1, 1]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 0
+[3]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring line 2
+[3]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring column 1
+[1, 2]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+Try black 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+White
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring column 3
+[1, 2]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.UNCOLORED: 3>]
+Try black 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+3 4 
+Enough space? True
+Not Enough space !
+Could the cell 4 be black? False
+Try white 4: [<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be black?
+2 3 
+Enough space? True
+Enough space!
+(0, 1)
+Case 3 ! Current available size matches block
+-> True
+Could the cell 3 be black? True
+return(4, 2)
+Could the cell 4 be white? True
+White
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.BLACK: 2>, <Color.BLACK: 2>, <Color.WHITE: 1>]
+- Coloring column 0
+[1, 1]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+Try black 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Black
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+- Coloring column 4
+[1, 1]
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.UNCOLORED: 3>]
+Try black 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be black?
+4 
+Enough space? True
+Enough space!
+(2, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 1)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 0)
+Case 0 ! No more blocks to place
+Could the cell 1 be black? True
+return(2, 1)
+Could the cell 2 be white? True
+Could the cell 4 be black? True
+Try white 4: [<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>]
+(4, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 4 be white?
+(3, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 3 be white?
+(2, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 2 be white?
+(1, 2)
+Case 4 ! Last block may fit with extra space
+Could the cell 1 be black?
+1 
+Enough space? True
+Enough space!
+(-1, 1)
+Case 1 ! Bigger block than space available
+Could the cell 1 be black? False
+return(2, 2)
+Could the cell 2 be white? False
+return(3, 2)
+Could the cell 3 be white? False
+return(4, 2)
+Could the cell 4 be white? False
+Black
+[<Color.WHITE: 1>, <Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+- Coloring line 4
+[1, 1]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+- Coloring line 4
+[1, 1]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+- Coloring line 4
+[1, 1]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+- Coloring line 4
+[1, 1]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+[<Color.BLACK: 2>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.WHITE: 1>, <Color.BLACK: 2>]
+---------------------
+| W | B | B | B | W |
+---------------------
+| B | W | B | W | B |
+---------------------
+| W | B | B | B | W |
+---------------------
+| W | B | W | B | W |
+---------------------
+| B | W | W | W | B |
+---------------------
+Line constraints: [[3], [1, 1, 1], [3], [1, 1], [1, 1]]
+Column constraints: [[1, 1], [1, 2], [3], [1, 2], [1, 1]]

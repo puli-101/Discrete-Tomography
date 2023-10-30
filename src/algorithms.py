@@ -75,19 +75,20 @@ class Solver:
                 T[j,l] = T[j,l] and (line[k] != Color.WHITE)
             log("-> "+str(T[j,l]))
         elif j > s[l - 1] - 1:
-            log("Case 4 ! Block may fit with extra space")
+            log("Case 4 ! Last block may fit with extra space")
             white = noire = False
             #CAS 1 Soit la case est blanche ou elle est incolore et on teste si on peut colorier en blanc
             if line[j] != Color.BLACK:
-                log("Is not black")
+                log("Could the cell "+str(j)+" be white?")
                 if (j-1,l) in T.keys(): 
                     white = T[j-1,l]
                 else: 
                     T[j-1,l] = white = (j - 1 >= 0) and self.line_is_colorable_generalized(line,T,j-1,l,s)
                     log("return"+str((j,l)))
+                log("Could the cell "+str(j)+" be white? "+str(white))
             #CAS 2 Soit elle est noire ou elle est incolore et on teste si on peut colorier en noir
             if line[j] != Color.WHITE:
-                log("Is not white")
+                log("Could the cell "+str(j)+" be black?")
                 if (j - s[l-1] - 1, l-1) in T.keys():
                     noire = T[(j - s[l-1] - 1, l-1)]
                 else:
@@ -102,10 +103,11 @@ class Solver:
                     #si on a assez de place alors on teste si on peut placer les autres blocks aussi
                     if enough_space:
                         log("Enough space!")
-                        T[(j - s[l-1] - 1, l-1)] = (j - s[l-1] - 1 >= 0) and self.line_is_colorable_generalized(line,T,j - s[l-1] - 1,l-1,s)
+                        T[(j - s[l-1] - 1, l-1)] = self.line_is_colorable_generalized(line,T,j - s[l-1] - 1,l-1,s)
                     else:
                         log("Not Enough space !")
                     noire = enough_space and T[(j - s[l-1] - 1, l-1)]
+                log("Could the cell "+str(j)+" be black? "+str(noire))
             T[j,l] = white or noire 
         return T[j,l]
     
@@ -138,9 +140,11 @@ class Solver:
             #check if we can color black
             lst[i] = Color.BLACK
             T = {} 
+            log("Try black "+str(i)+": "+str(lst))
             black = self.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             #check if we can color white
             lst[i] = Color.WHITE
+            log("Try white "+str(i)+": "+str(lst))
             T = {} 
             white = self.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             if white and black:
