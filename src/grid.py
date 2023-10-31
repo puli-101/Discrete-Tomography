@@ -162,7 +162,7 @@ class Grid:
         fps = 10
 
         image_folder = "output"
-        files = os.listdir(image_folder)
+        files = [file for file in os.listdir(image_folder) if ("target" not in file)]
         n_files = len(files)
         os.system("mkdir -p videos")
         video_name = "videos/video"+str(len(os.listdir("videos")))+".avi"
