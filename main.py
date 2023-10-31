@@ -12,7 +12,9 @@ if __name__ == "__main__":
         for option in sys.argv[1:]:
             option = option.lower()
             if option == "mkvid":
-                Grid.save_video()
+                name = Grid.save_video()
+                os.system('make mp4 INPUT='+name)
+                os.system('make gif INPUT='+name)
                 exit()
             elif option == "debug=true":
                 db.DEBUG = True 
@@ -26,7 +28,7 @@ if __name__ == "__main__":
 
     #initialisation de l'environement
     os.system("mkdir -p output/")
-
+    """
     #Chargement_d'une grille
     G = Grid.read_file(inpt)
     solver = Solver(G)
@@ -44,6 +46,24 @@ if __name__ == "__main__":
         name = Grid.save_video()
         os.system('make mp4 INPUT='+name)
         os.system('make gif INPUT='+name)
-    #print("-- Loaded img :")
-    #G3 = Image.to_grid('input/grid_25.pgm')
-    #G3.print_grid()
+    """
+    print("-- Loaded img :")
+    G3 = Image.to_grid('input/omori0.pgm',compress=True,chunk_size=13)
+    G3.print_grid()
+    G3.save_grid(name='omori.pgm')
+
+    G4 = G3.deepcopy()
+    G4.reset()
+    solver = Solver(G4)
+    ok,G5 = solver.coloration(G4,G4.n_lignes, G4.m_colonnes)
+
+    if ok != False:
+        G5.print_grid()
+        G5.print_txt()
+    else:
+        print("No solution")
+
+    if db.GRAPHICS_DEBUG:
+        name = Grid.save_video()
+        os.system('make mp4 INPUT='+name)
+        os.system('make gif INPUT='+name)

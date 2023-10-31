@@ -217,4 +217,4 @@ class Grid:
     def reset(self):
         for i in range(0,self.n_lignes):
             for j in range(0,self.m_colonnes):
-                G.grid[i][j] = Color.UNCOLORED
+                self.grid[i][j] = Color.UNCOLORED

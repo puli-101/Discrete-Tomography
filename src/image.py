@@ -33,7 +33,7 @@ class Image:
         return cl,cc
 
     @staticmethod
-    def to_grid(img_src, compress=False):
+    def to_grid(img_src, compress=False, chunk_size=1):
         """
             Transforme une image format pgm en une grille
             et si les dimensions sont trop grandes alors on force une compression
@@ -82,7 +82,8 @@ class Image:
                 matrix.append(matrix_line)
         
         if compress or (n > 70 and m > 70):
-            matrix, n, m = Image.compress_matrix(matrix, n, m)
+            print(n,m)
+            matrix, n, m = Image.compress_matrix(matrix, n, m, chunk_size=chunk_size)
         cl,cc = Image.calc_constraints(matrix)
 
 
@@ -92,6 +93,21 @@ class Image:
         return G
     
     @staticmethod
-    def compress_matrix(matrix,n,m):
-        chunk_size = min(n,m)//70
+    def compress_matrix(matrix,n,m, chunk_size=1):
+        if chunk_size == 1:
+            chunk_size = min(n,m)//70
+        new_mat=[]
+        for i in range(0,n,chunk_size):
+            line = []
+            for j in range(0,m,chunk_size):
+                c = 0
+                n_c = 0
+                for k1 in range(i, min(n, i + chunk_size)):
+                    for k2 in range(j, min(m, j + chunk_size)):
+                        c += matrix[k1][k2].value
+                        n_c += 1
+                line += [Color(round(c/n_c))]
+            new_mat += [line]
+        new_n = len(new_mat)
+        new_m = len(new_mat[0])
         return new_mat, new_n, new_m
