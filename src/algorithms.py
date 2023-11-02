@@ -47,7 +47,8 @@ class Solver:
             T[j,l] = blanche or noire 
         return T[j,l]
     
-    def line_is_colorable_generalized(self,line, T, j, l, s):
+    @staticmethod
+    def line_is_colorable_generalized(line, T, j, l, s):
         """
             On considere la i-eme ligne 'line'
             les j+1 premiers cases de la i-eme ligne
@@ -60,7 +61,12 @@ class Solver:
         if l == 0:
             log("Case 0 ! No more blocks to place")
             #we dont have to place any block -> OK
-            T[j,l] = True 
+            #we just have to check that there arent any 'extra' black blocks in the j first cases
+            #(in that case we would need at least one extra block)
+            ok = True
+            for i in range(0,j + 1):
+                ok = ok and (line[i] != Color.BLACK)
+            T[j,l] = ok 
         elif j < s[l - 1] - 1: 
             log("Case 1 ! Bigger block than space available")
             #we're trying to place a block bigger than the space we have available
@@ -83,7 +89,7 @@ class Solver:
                 if (j-1,l) in T.keys(): 
                     white = T[j-1,l]
                 else: 
-                    T[j-1,l] = white = (j - 1 >= 0) and self.line_is_colorable_generalized(line,T,j-1,l,s)
+                    T[j-1,l] = white = (j - 1 >= 0) and Solver.line_is_colorable_generalized(line,T,j-1,l,s)
                     log("return"+str((j,l)))
                 log("Could the cell "+str(j)+" be white? "+str(white))
             #CAS 2 Soit elle est noire ou elle est incolore et on teste si on peut colorier en noir
@@ -103,7 +109,7 @@ class Solver:
                     #si on a assez de place alors on teste si on peut placer les autres blocks aussi
                     if enough_space:
                         log("Enough space!")
-                        T[(j - s[l-1] - 1, l-1)] = self.line_is_colorable_generalized(line,T,j - s[l-1] - 1,l-1,s)
+                        T[(j - s[l-1] - 1, l-1)] = Solver.line_is_colorable_generalized(line,T,j - s[l-1] - 1,l-1,s)
                     else:
                         log("Not Enough space !")
                     noire = enough_space and T[(j - s[l-1] - 1, l-1)]
@@ -122,7 +128,12 @@ class Solver:
                     return False
         return True
 
-    def colorier(self,lst,constraints, G):
+    @staticmethod
+    def colorier(lst,constraints):
+        """
+            Coloration d'une liste (ligne ou colonne)
+            a partir d'une liste de contraintes
+        """
         ok = True
         modif = []
         log(constraints)
@@ -134,19 +145,18 @@ class Solver:
             elif len(constraints) == 0:
                 log("White")
                 lst[i] = Color.WHITE
-                log_img(G)
                 modif.append(i)
                 continue
             #check if we can color black
             lst[i] = Color.BLACK
             T = {} 
             log("Try black "+str(i)+": "+str(lst))
-            black = self.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
+            black = Solver.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             #check if we can color white
             lst[i] = Color.WHITE
             log("Try white "+str(i)+": "+str(lst))
             T = {} 
-            white = self.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
+            white = Solver.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             if white and black:
                 log("No info")
                 lst[i] = Color.UNCOLORED
@@ -154,47 +164,54 @@ class Solver:
             elif white and not(black):
                 log("White")
                 lst[i] = Color.WHITE
-                log_img(G)
                 modif.append(i)
             elif black and not(white):
                 log("Black")
                 lst[i] = Color.BLACK 
-                log_img(G)
                 modif.append(i)
             else:
                 log("Nono")
-                log_img(G)
                 log("!!!! - "+str(lst))
                 return False,[]
         log(lst)
         return True,modif
 
-
-    def colorierLig(self, G, i):
+    @staticmethod
+    def colorierLig(G, i):
+        """
+            Coloration d'une ligne
+        """
         log("- Coloring line "+str(i))
-        line = G.grid[i]
+        line = G.grid[i].copy()
         constraints = G.contrainte_l[i]
-        return self.colorier(line,constraints,G)
+
+        ok,modif = Solver.colorier(line,constraints)
+
+        #mis a jour de la ligne
+        for j in modif:
+            G.grid[i][j] = line[j]
+            log_img(G)
+
+        return ok,modif
     
-    def colorierCol(self, G, j):
+    @staticmethod
+    def colorierCol(G, j):
+        """ 
+            Coloration d'une colonne
+        """
         log("- Coloring column "+str(j))
-        local_debug = GRAPHICS_DEBUG
-        if local_debug:
-            toggle(graphics=False)
-        
         colonne = [line[j] for line in G.grid]
         constraints = G.contrainte_c[j]
-        ok,modif = self.colorier(colonne,constraints,G)
+        ok,modif = Solver.colorier(colonne,constraints)
 
-        if local_debug:
-            toggle(graphics=True)
         #mis a jour de la colonne
         for i in modif:
             G.grid[i][j] = colonne[i]
             log_img(G)
         return ok,modif
 
-    def coloration(self, G, n, m):
+    @staticmethod
+    def coloration(G, n, m):
         """
             Retourne 
             - True, G' 
@@ -210,23 +227,128 @@ class Solver:
         
         while len(lignesAVoir) > 0 or len(colonnesAVoir) > 0:
             for i in lignesAVoir:
-                (ok,nouveaux) = self.colorierLig(G2,i) #Colorie par r´ecurrence un max de cases de la ligne i de G2
+                (ok,nouveaux) = Solver.colorierLig(G2,i) #Colorie par r´ecurrence un max de cases de la ligne i de G2
                 #ok=Faux si d´etection d’impossibilit´e, ok=Vrai sinon 
                 if not(ok):
                     return (False,None)
                 colonnesAVoir += nouveaux
             lignesAVoir = []
             for j in colonnesAVoir:
-                (ok,nouveaux) = self.colorierCol(G2,j)
+                (ok,nouveaux) = Solver.colorierCol(G2,j)
                 if not(ok):
                     return (False,None)
                 lignesAVoir += nouveaux
             colonnesAVoir = []
 
-        ok = self.check(G2)
+        ok = Solver.check(G2)
         #si on a colorie tous les cases (check) alors OK = TRUE
         if (ok):
             return (True,G2)
         else:
             #sinon alors on a une coloration partielle
             return (None,G2)
+    
+    @staticmethod
+    def enumeration(G):
+        """
+            Debut d'algo de resolution complete
+        """
+        #print("Enum")
+        ok,G_partial_col = Solver.coloration(G, G.n_lignes, G.m_colonnes)
+        G_partial_col.print_grid()
+        if ok == False:
+            return (False,None)
+        elif ok == True:
+            return (True,G_partial_col)
+        else:
+            #print("ok=None")
+            i,j = Solver.next_coord(G_partial_col,0,0)
+            #print("next_cord")
+            ok,res = Solver.enum_rec(G_partial_col,i,j,Color.WHITE)
+            if ok:
+                return ok,res 
+            return Solver.enum_rec(G_partial_col,i,j,Color.BLACK)
+
+
+    @staticmethod
+    def next_coord(G,i,j):
+        """
+            On determine la prochaine case sans colorier de G
+            a partir des coordonnees i,j
+        """
+        x = i
+        y = j + 1
+        while x < G.n_lignes:
+            while y < G.m_colonnes:
+                if G.grid[x][y] == Color.UNCOLORED:
+                    return x,y
+                y += 1
+            y = 0
+            x += 1
+        return x,y
+
+    @staticmethod
+    def colorierEtPropager(G,x,y,color):
+        """
+            Meme fonction que coloration sauf l'initialisation de lignes a voir et colonnes a voir
+        """
+        G2 = G.deepcopy()
+        G2.grid[x][y] = color
+        lignesAVoir = [x]
+        colonnesAVoir = [y]
+        
+        while len(lignesAVoir) > 0 or len(colonnesAVoir) > 0:
+            for i in lignesAVoir:
+                (ok,nouveaux) = Solver.colorierLig(G2,i) 
+                if not(ok):
+                    return (False,None)
+                colonnesAVoir += nouveaux
+            lignesAVoir = []
+            for j in colonnesAVoir:
+                (ok,nouveaux) = Solver.colorierCol(G2,j)
+                #print("second ok",ok,nouveaux)
+                if not(ok):
+                    return (False,None)
+                lignesAVoir += nouveaux
+                #print(colonnesAVoir,lignesAVoir)
+            colonnesAVoir = []
+
+        ok = Solver.check(G2)
+        #si on a colorie tous les cases (check) alors OK = TRUE
+        if (ok):
+            return (True,G2)
+        else:
+            #print("yeah")
+            #sinon alors on a une coloration partielle
+            return (None,G2)
+
+    @staticmethod
+    def enum_rec(G,i,j,color):
+        """
+            Algorithme de resolution complet
+        """
+        n = G.n_lignes
+        m = G.m_colonnes
+
+        if j >= m: #saut de ligne si necessaire
+            j = 0
+            i += 1
+        if i >= n: #si on a deja colorie tous les lignes -> OK
+            return (True,G) 
+        ok,G_partial_col = Solver.colorierEtPropager(G,i,j,color)
+        #si apres avoir fait une coloration partielle on une coloration complete -> OK
+        if ok == True: 
+            return (True,G_partial_col)
+        #s'il est impossible de continuer a colorier -> Erreur
+        elif ok == False: 
+            return (False, None)
+        #sinon
+        #on trouve la prochaine case sans colorier
+        (next_i,next_j) = Solver.next_coord(G_partial_col,i,j) 
+
+        #on essaie de colorier cette case en blanc
+        ok,G_res = Solver.enum_rec(G_partial_col, next_i, next_j, Color.WHITE) 
+        if ok:
+            return (ok, G_res)
+        #si on n'a pas reussi on essaie de colorier en noir
+        return Solver.enum_rec(G_partial_col, next_i, next_j, Color.BLACK) 

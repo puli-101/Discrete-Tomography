@@ -6,6 +6,7 @@ import sys
 import os
 
 if __name__ == "__main__":
+    #option defaults
     inpt = 'instances/0.txt'
     cst_inpt = 'input/omori.pgm'
     custom = False 
@@ -35,8 +36,8 @@ if __name__ == "__main__":
                 custom = True
             elif option.startswith("chunk_size="):
                 chunk_size = int(option.removeprefix("chunk_size="))
-            elif option.startswith("compress="):
-                compress = bool(option.removeprefix("compress="))
+            elif option.startswith("compress=false"):
+                compress = False
             elif option == "help" or option == "--help" or option == "-help":
                 print("Discrete Tomography Image Reconstructor")
                 print("Execution:\t\tpython3 main.py [options]")
@@ -50,8 +51,6 @@ if __name__ == "__main__":
                 print("compress=true\t\t: Compresses the loaded image to optimize the algorithm")
                 print("mkvid\t\t\t: Transforms the reconstruction trace on 'output' to an mp4, avi, and gif video")
                 exit()
-
-
 
     #initialisation de l'environement
     os.system("mkdir -p output/")
@@ -70,10 +69,9 @@ if __name__ == "__main__":
         G.reset()
 
     #Execution de l'algorithme de coloration
-    solver = Solver(G)
     G.print_grid()
 
-    ok,G2 = solver.coloration(G, G.n_lignes, G.m_colonnes)
+    ok,G2 = Solver.enumeration(G)
 
     if ok != False:
         G2.print_grid()
@@ -83,5 +81,6 @@ if __name__ == "__main__":
 
     if db.GRAPHICS_DEBUG:
         name = Grid.save_video()
-        os.system('make mp4 INPUT='+name)
-        os.system('make gif INPUT='+name)
+        if name != None:
+            os.system('make mp4 INPUT='+name)
+            os.system('make gif INPUT='+name)

@@ -10,6 +10,17 @@ class Color(Enum):
     BLACK = 2
     UNCOLORED = 3 
 
+    def __str__(self):
+        """
+            toString()
+        """
+        if self.value == 1:
+            return "Color(white)"
+        elif self.value == 2:
+            return "Color(black)"
+        else:
+            return "Color(uncolored)"
+
 class Grid:
     def __init__(self, n_lignes, m_colonnes, contrainte_l = None, contrainte_c = None):
         """

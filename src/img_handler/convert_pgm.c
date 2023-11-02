@@ -1,3 +1,7 @@
+/*
+ *   Programme pour transformer un fichier type pgm P5 en pgm P2
+ *   qui a la fois change le niveau de gris a max=2
+*/
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdlib.h>
