@@ -76,6 +76,7 @@ if __name__ == "__main__":
     if ok != False:
         G2.print_grid()
         G2.print_txt()
+        G2.save_grid(name='sample_results/latest_result.pgm')
     else:
         print("No solution")
 

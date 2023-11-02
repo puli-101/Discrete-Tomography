@@ -193,8 +193,6 @@ class Grid:
         video = cv2.VideoWriter(video_name, 0, fps, (width,height))
 
         images.sort(key=lambda nm: int(nm.removeprefix("grid_").removesuffix(".pgm")) )
-        last_img = images[-1]
-        os.system('cp output/'+last_img+' sample_results/'+last_img)
         for image in images:
             print(image)
             video.write(cv2.imread(os.path.join(image_folder, image)))
