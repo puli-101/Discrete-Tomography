@@ -2,10 +2,17 @@ from src.grid import *
 
 class Image:
     def __init__(self,src):
+        """
+            src == path de l'image
+        """
         self.src = src
     
     @staticmethod
     def calc_constraints_lst(lst):
+        """
+            Fonction qui a partir d'une liste calcule
+            les contraintes associees a cette liste
+        """
         block_size = 0
         res = []
         for c in lst:
@@ -21,6 +28,10 @@ class Image:
 
     @staticmethod
     def calc_constraints(matrix):
+        """
+            Fonction qui a partir d'une matrice deja colorie
+            on determine l'ensemble de contraintes par ligne/colonne
+        """
         cl = []
         cc = []
         for line in matrix:
@@ -94,6 +105,10 @@ class Image:
     
     @staticmethod
     def compress_matrix(matrix,n,m, chunk_size=1):
+        """
+            Reduit la taille d'une matrice de taille n x m
+            en prennant la moyenne des valeurs de carres de taille chunk_size
+        """
         if chunk_size == 1:
             chunk_size = min(n,m)//70
         new_mat=[]
