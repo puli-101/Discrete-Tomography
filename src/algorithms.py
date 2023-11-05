@@ -138,6 +138,11 @@ class Solver:
         modif = []
         log(constraints)
         log(lst)
+        #on verifie d'abord que la ligne est coloriable 
+        #(peut etre on a une coloration partielle initiale incompatible)
+        T = {}
+        if not(Solver.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)):
+            return False,[]
         for i in range(0, len(lst)):
             if lst[i] != Color.UNCOLORED:
                 continue
