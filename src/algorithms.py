@@ -143,7 +143,7 @@ class Solver:
                 continue
             #si on n'a pas de contraintes alors immediatement toute la ligne est blanche
             elif len(constraints) == 0:
-                log("White")
+                log("no constraints -> cell is white")
                 lst[i] = Color.WHITE
                 modif.append(i)
                 continue
@@ -158,19 +158,19 @@ class Solver:
             T = {} 
             white = Solver.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             if white and black:
-                log("No info")
+                log("Concusion : no info on cell "+str(i))
                 lst[i] = Color.UNCOLORED
                 continue
             elif white and not(black):
-                log("White")
+                log("Concusion : We can color the cell "+str(i)+" white")
                 lst[i] = Color.WHITE
                 modif.append(i)
             elif black and not(white):
-                log("Black")
+                log("Concusion : We can color the cell "+str(i)+" black")
                 lst[i] = Color.BLACK 
                 modif.append(i)
             else:
-                log("Nono")
+                log("Concusion : contradiction with constraints no solution on "+str(i))
                 log("!!!! - "+str(lst))
                 return False,[]
         log(lst)
@@ -253,8 +253,9 @@ class Solver:
         """
             Debut d'algo de resolution complete
         """
-        #print("Enum")
+        log("Enum")
         ok,G_partial_col = Solver.coloration(G, G.n_lignes, G.m_colonnes)
+        log("Post initial coloration")
         G_partial_col.print_grid()
         if ok == False:
             return (False,None)
@@ -327,6 +328,8 @@ class Solver:
         """
             Algorithme de resolution complet
         """
+        log("Forcing "+str(color)+" into "+str((i,j)))
+
         n = G.n_lignes
         m = G.m_colonnes
 
