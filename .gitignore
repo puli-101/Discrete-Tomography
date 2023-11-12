@@ -7,3 +7,5 @@ debug/*
 bin/*
 out/*   
 enonce*
+src/tester*
+#res.csv
