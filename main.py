@@ -4,6 +4,7 @@ from src.image import *
 import src.debugging as db
 import sys
 import os
+import time
 
 if __name__ == "__main__":
     #option defaults
@@ -12,7 +13,9 @@ if __name__ == "__main__":
     custom = False 
     compress = True 
     chunk_size = 13
-    
+    chrono = False
+    start_time = 0
+
     if len(sys.argv) > 1:
         #options d'execution
         for option in sys.argv[1:]:
@@ -38,6 +41,9 @@ if __name__ == "__main__":
                 chunk_size = int(option.removeprefix("chunk_size="))
             elif option.startswith("compress=false"):
                 compress = False
+            elif option == "time=true":
+                chrono = True
+                start_time = time.time()
             elif option == "help" or option == "--help" or option == "-help":
                 print("Discrete Tomography Image Reconstructor")
                 print("Execution:\t\tpython3 main.py [options]")
@@ -80,6 +86,10 @@ if __name__ == "__main__":
     else:
         print("No solution")
 
+    #affichage du temps d'execution
+    if chrono:
+        print(time.time() - start_time, file=sys.stderr)
+    #generation de la video
     if db.GRAPHICS_DEBUG:
         name = Grid.save_video()
         if name != None:
