@@ -15,6 +15,7 @@ if __name__ == "__main__":
     chunk_size = 13
     chrono = False
     start_time = 0
+    partial=False
 
     if len(sys.argv) > 1:
         #options d'execution
@@ -44,6 +45,8 @@ if __name__ == "__main__":
             elif option == "time=true":
                 chrono = True
                 start_time = time.time()
+            elif option == "partial=true":
+                partial = True
             elif option == "help" or option == "--help" or option == "-help":
                 print("Discrete Tomography Image Reconstructor")
                 print("Execution:\t\tpython3 main.py [options]")
@@ -56,13 +59,19 @@ if __name__ == "__main__":
                 print("chunk_size=<NUMBER>\t: States the size of each block in terms of pixels in the image compression process")
                 print("compress=true\t\t: Compresses the loaded image to optimize the algorithm")
                 print("mkvid\t\t\t: Transforms the reconstruction trace on 'output' to an mp4, avi, and gif video")
+                print("time=true\t\t: Returns the execution time on the standard error output")
+                print("partial=true\t\t: Executes a partial coloration instead of a full recursive coloration")
                 exit()
+            else:
+                print("Error: unknown option "+option)
+                exit(-1)
 
     #initialisation de l'environement
     os.system("mkdir -p output/")
     
     G = None
     solver = None
+    ok,G2 = None,None 
 
     if not(custom):
         #Chargement_d'une grille
@@ -74,10 +83,15 @@ if __name__ == "__main__":
 
         G.reset()
 
-    #Execution de l'algorithme de coloration
+    
     G.print_grid()
 
-    ok,G2 = Solver.enumeration(G)
+    #Execution de l'algorithme de coloration complete
+    if not(partial):
+        ok,G2 = Solver.enumeration(G)
+    #Execution de l'algorithme de coloration partiel
+    else:
+        ok,G2 = Solver.coloration(G,G.n_lignes, G.m_colonnes)
 
     if ok != False:
         G2.print_grid()
