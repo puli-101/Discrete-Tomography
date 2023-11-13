@@ -27,3 +27,6 @@ gif:
 	ffmpeg -y -i $(INPUT) -r 15 \
 	-vf scale=512:-1 \
 	videos/$(OUTPUT).gif
+
+convert:
+	convert $(INPUT) sample_results/conversion.png 
