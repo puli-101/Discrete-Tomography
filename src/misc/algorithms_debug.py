@@ -1,20 +1,15 @@
 from src.grid import *
 from src.debugging import *
-import numpy as np
 
 class Solver:
-    @staticmethod
-    def create_T(j,l):
-        """
-            Allocation de la matrice T de taille j x l
-        """
-        T = []
-        for i in range(j+1):
-            T.append([None] * (l+1))
-        return T
-    
-    @staticmethod
-    def line_is_colorable(T, j, l, s):
+    def __init__(self, grid=None):
+        if grid == None:
+            grid = Grid.read_file("instances/1.txt")
+        self.G = grid
+        self.n = grid.n_lignes #access plus directe
+        self.m = grid.m_colonnes
+
+    def line_is_colorable(self, T, j, l, s):
         """
             On considere la i-eme ligne 
             les j+1 premiers cases de la i-eme ligne
@@ -62,52 +57,65 @@ class Solver:
             retour : Vrai si on peut colorier les j+1 premiers cases d'une certaine ligne
                 avec les l premiers blocks de s
         """
+        log((j,l))
         if l == 0:
+            log("Case 0 ! No more blocks to place")
             #we dont have to place any block -> OK
             #we just have to check that there arent any 'extra' black blocks in the j first cases
             #(in that case we would need at least one extra block)
             ok = True
             for i in range(0,j + 1):
                 ok = ok and (line[i] != Color.BLACK)
-            T[j][l] = ok 
+            T[j,l] = ok 
         elif j < s[l - 1] - 1: 
+            log("Case 1 ! Bigger block than space available")
             #we're trying to place a block bigger than the space we have available
-            T[j][l] = False
+            T[j,l] = False
         elif j == s[l - 1] - 1:
-            if T[j][l] != None:
-                return T[j][l]
+            log("Case 3 ! Current available size matches block")
             #if the current available size (j+1) matches the size of the last block of the sequence
             #then we can color the line only if that's the only block in the sequence (i.e. l == 0)
-            else:
-                T[j][l] = (l == 1)
-                #and the rest of the segment hasn't been colored differently
-                for k in range(0,j+1):
-                    T[j][l] = T[j][l] and (line[k] != Color.WHITE)
+            T[j,l] = (l == 1)
+            #and the rest of the segment hasn't been colored differently
+            for k in range(0,j+1):
+                T[j,l] = T[j,l] and (line[k] != Color.WHITE)
+            log("-> "+str(T[j,l]))
         elif j > s[l - 1] - 1:
+            log("Case 4 ! Last block may fit with extra space")
             white = noire = False
             #CAS 1 Soit la case est blanche ou elle est incolore et on teste si on peut colorier en blanc
             if line[j] != Color.BLACK:
-                if T[j-1][l] != None: 
-                    white = T[j-1][l]
+                log("Could the cell "+str(j)+" be white?")
+                if (j-1,l) in T.keys(): 
+                    white = T[j-1,l]
                 else: 
-                    T[j-1][l] = white = (j - 1 >= 0) and Solver.line_is_colorable_generalized(line,T,j-1,l,s)
+                    T[j-1,l] = white = (j - 1 >= 0) and Solver.line_is_colorable_generalized(line,T,j-1,l,s)
+                    log("return"+str((j,l)))
+                log("Could the cell "+str(j)+" be white? "+str(white))
             #CAS 2 Soit elle est noire ou elle est incolore et on teste si on peut colorier en noir
-            if not(white) and line[j] != Color.WHITE:
-                left_extremum = max(0,j - s[l-1] - 1)
-                if T[left_extremum][l-1] != None:
-                    noire = T[left_extremum][l-1]
+            if line[j] != Color.WHITE:
+                log("Could the cell "+str(j)+" be black?")
+                if (j - s[l-1] - 1, l-1) in T.keys():
+                    noire = T[(j - s[l-1] - 1, l-1)]
                 else:
                     #on teste si on peut placer le dernier block
                     enough_space = True 
                     for k in range(j - s[l-1] + 1, j+1):
+                        log(str(k),end=" ")
                         enough_space = enough_space and (line[k] != Color.WHITE)
+                    log()
+                    log("Enough space? "+str(enough_space))
                     enough_space = enough_space and (line[j - s[l-1]] != Color.BLACK) #on ne peut pas avoir 2 blocks contigus
                     #si on a assez de place alors on teste si on peut placer les autres blocks aussi
                     if enough_space:
-                        T[left_extremum][l-1] = Solver.line_is_colorable_generalized(line,T,left_extremum,l-1,s)
-                    noire = enough_space and T[left_extremum][l-1]
-            T[j][l] = white or noire 
-        return T[j][l]
+                        log("Enough space!")
+                        T[(j - s[l-1] - 1, l-1)] = Solver.line_is_colorable_generalized(line,T,j - s[l-1] - 1,l-1,s)
+                    else:
+                        log("Not Enough space !")
+                    noire = enough_space and T[(j - s[l-1] - 1, l-1)]
+                log("Could the cell "+str(j)+" be black? "+str(noire))
+            T[j,l] = white or noire 
+        return T[j,l]
     
     @staticmethod
     def check(G):
@@ -128,39 +136,49 @@ class Solver:
         """
         ok = True
         modif = []
+        log(constraints)
+        log(lst)
         #on verifie d'abord que la ligne est coloriable 
         #(peut etre on a une coloration partielle initiale incompatible)
-        j,l = len(lst) - 1, len(constraints)
-        T = Solver.create_T(j,l) 
-        if not(Solver.line_is_colorable_generalized(lst, T, j, l, constraints)):
+        T = {}
+        if not(Solver.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)):
             return False,[]
         for i in range(0, len(lst)):
             if lst[i] != Color.UNCOLORED:
                 continue
             #si on n'a pas de contraintes alors immediatement toute la ligne est blanche
             elif len(constraints) == 0:
+                log("no constraints -> cell is white")
                 lst[i] = Color.WHITE
                 modif.append(i)
                 continue
             #check if we can color black
             lst[i] = Color.BLACK
-            T = Solver.create_T(j,l) 
-            black = Solver.line_is_colorable_generalized(lst,T, j, l, constraints)
+            T = {} 
+            log("Try black "+str(i)+": "+str(lst))
+            black = Solver.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             #check if we can color white
             lst[i] = Color.WHITE
-            T = Solver.create_T(j,l)  
-            white = Solver.line_is_colorable_generalized(lst,T, j, l, constraints)
+            log("Try white "+str(i)+": "+str(lst))
+            T = {} 
+            white = Solver.line_is_colorable_generalized(lst,T, len(lst) - 1, len(constraints), constraints)
             if white and black:
+                log("Concusion : no info on cell "+str(i))
                 lst[i] = Color.UNCOLORED
                 continue
             elif white and not(black):
+                log("Concusion : We can color the cell "+str(i)+" white")
                 lst[i] = Color.WHITE
                 modif.append(i)
             elif black and not(white):
+                log("Concusion : We can color the cell "+str(i)+" black")
                 lst[i] = Color.BLACK 
                 modif.append(i)
             else:
+                log("Concusion : contradiction with constraints no solution on "+str(i))
+                log("!!!! - "+str(lst))
                 return False,[]
+        log(lst)
         return True,modif
 
     @staticmethod
@@ -168,6 +186,7 @@ class Solver:
         """
             Coloration d'une ligne
         """
+        log("- Coloring line "+str(i))
         line = G.grid[i].copy()
         constraints = G.contrainte_l[i]
 
@@ -185,6 +204,7 @@ class Solver:
         """ 
             Coloration d'une colonne
         """
+        log("- Coloring column "+str(j))
         colonne = [line[j] for line in G.grid]
         constraints = G.contrainte_c[j]
         ok,modif = Solver.colorier(colonne,constraints)
@@ -196,7 +216,7 @@ class Solver:
         return ok,modif
 
     @staticmethod
-    def coloration(G,lignesAVoir=[],colonnesAVoir=[]):
+    def coloration(G, n, m):
         """
             Retourne 
             - True, G' 
@@ -206,54 +226,54 @@ class Solver:
             - False, None
                 si on ne peut pas colorier partiellement G
         """
-        n = G.n_lignes
-        m = G.m_colonnes
-
+        G2 = G.deepcopy()
         lignesAVoir = list(range(0,n))
         colonnesAVoir = list(range(0,m))
         
         while len(lignesAVoir) > 0 or len(colonnesAVoir) > 0:
             for i in lignesAVoir:
-                (ok,nouveaux) = Solver.colorierLig(G,i) #Colorie par r´ecurrence un max de cases de la ligne i de G2
+                (ok,nouveaux) = Solver.colorierLig(G2,i) #Colorie par r´ecurrence un max de cases de la ligne i de G2
                 #ok=Faux si d´etection d’impossibilit´e, ok=Vrai sinon 
                 if not(ok):
                     return (False,None)
                 colonnesAVoir += nouveaux
             lignesAVoir = []
             for j in colonnesAVoir:
-                (ok,nouveaux) = Solver.colorierCol(G,j)
+                (ok,nouveaux) = Solver.colorierCol(G2,j)
                 if not(ok):
                     return (False,None)
                 lignesAVoir += nouveaux
             colonnesAVoir = []
 
-        ok = Solver.check(G)
+        ok = Solver.check(G2)
         #si on a colorie tous les cases (check) alors OK = TRUE
         if (ok):
-            return (True,G)
+            return (True,G2)
         else:
             #sinon alors on a une coloration partielle
-            return (None,G)
+            return (None,G2)
     
     @staticmethod
     def enumeration(G):
         """
             Debut d'algo de resolution complete
         """
-        ok,G = Solver.coloration(G, G.n_lignes, G.m_colonnes)
+        log("Enum")
+        ok,G_partial_col = Solver.coloration(G, G.n_lignes, G.m_colonnes)
+        log("Post initial coloration")
+        G_partial_col.print_grid()
         if ok == False:
             return (False,None)
         elif ok == True:
-            return (True,G)
+            return (True,G_partial_col)
         else:
-            G.print_grid()
             #print("ok=None")
-            i,j = Solver.next_coord(G,0,0)
+            i,j = Solver.next_coord(G_partial_col,0,0)
             #print("next_cord")
-            ok,res = Solver.enum_rec(G,i,j,Color.WHITE)
+            ok,res = Solver.enum_rec(G_partial_col,i,j,Color.WHITE)
             if ok:
                 return ok,res 
-            return Solver.enum_rec(G,i,j,Color.BLACK)
+            return Solver.enum_rec(G_partial_col,i,j,Color.BLACK)
 
 
     @staticmethod
@@ -313,6 +333,8 @@ class Solver:
         """
             Algorithme de resolution complet
         """
+        log("Forcing "+str(color)+" into "+str((i,j)))
+
         n = G.n_lignes
         m = G.m_colonnes
 

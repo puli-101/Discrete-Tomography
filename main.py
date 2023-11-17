@@ -81,7 +81,7 @@ if __name__ == "__main__":
     
     G = None
     solver = None
-    ok,G2 = None,None 
+    ok = None
 
     if not(custom):
         #Chargement_d'une grille (.txt)
@@ -99,19 +99,19 @@ if __name__ == "__main__":
     start_time = time.time()
     #Execution de l'algorithme de coloration complete
     if not(partial):
-        ok,G2 = Solver.enumeration(G)
+        ok,G = Solver.enumeration(G)
     #Execution de l'algorithme de coloration partiel
     else:
-        ok,G2 = Solver.coloration(G,G.n_lignes, G.m_colonnes)
+        ok,G = Solver.coloration(G)
 
     #on enregistre le temps d'execution avant de faire les traitement d'images finals
     if chrono:
         exec_time = time.time() - start_time
 
     if ok != False:
-        G2.print_grid()
-        G2.print_txt()
-        G2.save_grid(name='sample_results/latest_result.pgm', png=True)
+        G.print_grid()
+        G.print_txt()
+        G.save_grid(name='sample_results/latest_result.pgm', png=True)
     else:
         print("No solution")
 
