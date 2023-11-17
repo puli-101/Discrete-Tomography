@@ -99,11 +99,9 @@ if __name__ == "__main__":
     start_time = time.time()
     #Execution de l'algorithme de coloration complete
     if not(partial):
-        print("Enum")
         ok,G2 = Solver.enumeration(G)
     #Execution de l'algorithme de coloration partiel
     else:
-        print("partial")
         ok,G2 = Solver.coloration(G,G.n_lignes, G.m_colonnes)
 
     #on enregistre le temps d'execution avant de faire les traitement d'images finals

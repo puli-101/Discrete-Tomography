@@ -2,14 +2,8 @@ from src.grid import *
 from src.debugging import *
 
 class Solver:
-    def __init__(self, grid=None):
-        if grid == None:
-            grid = Grid.read_file("instances/1.txt")
-        self.G = grid
-        self.n = grid.n_lignes #access plus directe
-        self.m = grid.m_colonnes
-
-    def line_is_colorable(self, T, j, l, s):
+    @staticmethod
+    def line_is_colorable(T, j, l, s):
         """
             On considere la i-eme ligne 
             les j+1 premiers cases de la i-eme ligne
