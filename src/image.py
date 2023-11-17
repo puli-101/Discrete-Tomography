@@ -44,14 +44,21 @@ class Image:
         return cl,cc
 
     @staticmethod
-    def to_grid(img_src, compress=False, chunk_size=1):
+    def to_grid(img_src, compress=False, chunk_size=1, force_conversion=False):
         """
             Transforme une image format pgm en une grille
             et si les dimensions sont trop grandes alors on force une compression
         """
-        if not(img_src.endswith(".pgm")):
-            print("Incompatible file type")
-            return 
+        conversion = False
+        if not(img_src.endswith(".pgm")) or force_conversion:
+            #si l'image n'est pas format pgm alors on essaie de convertir en pgm 
+            conversion = True
+            print("Warning: Non pgm source input detected")
+            print("Executing automatic image conversion...")
+            os.system("make > /dev/null && mkdir -p custom_input/")
+            os.system("convert "+img_src+" custom_input/to_p5.pgm")
+            os.system("./bin/convert_pgm custom_input/to_p5.pgm custom_input/to_p2.pgm")
+            img_src = "custom_input/to_p2.pgm"
         matrix = []
         n = 0
         m = 0
@@ -67,6 +74,7 @@ class Image:
                     readHeader = True
                     if line!="P2":
                         print("Error: Incompatible header")
+                        print("Re execute with force=true")
                         return
                     continue
                 if not(readDim):
@@ -92,15 +100,23 @@ class Image:
                         matrix_line.append(Color.WHITE)
                 matrix.append(matrix_line)
         
+        #compression de la matrice (on force la compression si trop grande)
         if compress or (n > 70 and m > 70):
             print(n,m)
             matrix, n, m = Image.compress_matrix(matrix, n, m, chunk_size=chunk_size)
+
+        #calcul des contraintes
         cl,cc = Image.calc_constraints(matrix)
 
 
         G = Grid(n,m,cl,cc)
         G.grid = matrix 
         
+        #on elimine les fichiers temporaires
+        if (conversion):
+            os.system("rm custom_input/to_p5.pgm")
+            os.system("rm custom_input/to_p2.pgm")
+
         return G
     
     @staticmethod

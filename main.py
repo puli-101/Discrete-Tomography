@@ -21,18 +21,21 @@ if __name__ == "__main__":
         #options d'execution
         for option in sys.argv[1:]:
             option = option.lower()
+
+            option_val = option.endswith("true") 
+
             if option == "mkvid":
                 name = Grid.save_video()
                 os.system('make mp4 INPUT='+name)
                 os.system('make gif INPUT='+name)
                 exit()
-            elif option == "debug=true":
-                db.DEBUG = True 
-            elif option == "img_debug=true":
+            elif option.startswith("debug="):
+                db.DEBUG = option_val
+            elif option.startswith("img_debug="):
                 os.system("rm -rf output/*")
-                db.GRAPHICS_DEBUG = True 
-            elif option == "color_printing=true":
-                db.COLOR_PRINTING = True
+                db.GRAPHICS_DEBUG = option_val
+            elif option.startswith("color_printing="):
+                db.COLOR_PRINTING = option_val
             elif option.startswith("input="):
                 inpt = option.removeprefix("input=")
             elif option.startswith("custom_input="):
@@ -40,13 +43,13 @@ if __name__ == "__main__":
                 custom = True
             elif option.startswith("chunk_size="):
                 chunk_size = int(option.removeprefix("chunk_size="))
-            elif option.startswith("compress=false"):
-                compress = False
-            elif option == "time=true":
-                chrono = True
+            elif option.startswith("compress="):
+                compress = option_val
+            elif option.startswith("time="):
+                chrono = option_val
                 start_time = time.time()
-            elif option == "partial=true":
-                partial = True
+            elif option.startswith("partial="):
+                partial = option_val
             elif option == "help" or option == "--help" or option == "-help":
                 print("Discrete Tomography Image Reconstructor")
                 print("Execution:\t\tpython3 main.py [options]")
