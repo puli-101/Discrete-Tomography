@@ -52,30 +52,24 @@ class Grid:
         """
             affichage d'une ligne
         """
-        print("|",end="")
+        #print("|",end="")
         for j in range(0,self.m_colonnes):
             if (self.grid[i][j] == Color.WHITE):
-                if db.COLOR_PRINTING:
-                    print('\x1b[5;37;47m' + '   ' + '\x1b[0m'+'|',end="")
-                else:
-                    print(" W |",end="")
+                print("██",end="")
             elif (self.grid[i][j] == Color.BLACK):
-                if db.COLOR_PRINTING:
-                    print('\x1b[5;30;40m' + '   ' + '\x1b[0m'+'|',end="")
-                else:
-                    print(" B |",end="")
+                print("░░",end="")
             else:
-                print("   |",end="")
+                print("??",end="")
         print()
 
     def print_grid(self):
         """
             Affichage ligne par ligne de la grille
         """
-        self.print_dash()
+        #self.print_dash()
         for i in range(0,self.n_lignes):
             self.print_line(i)
-            self.print_dash()
+            #self.print_dash()
         print("Line constraints:",self.contrainte_l)
         print("Column constraints:",self.contrainte_c)
     
@@ -120,10 +114,13 @@ class Grid:
         m = len(column_constraints)
         return Grid(n,m,line_constraints,column_constraints)
     
-    def save_grid(self, name="", comment="", openFile=False,dialate=True):
+    def save_grid(self, name="", comment="", openFile=False,dialate=True,png=False):
         """
             Methode pour transformer la grille actuelle en image
             de taille n * m
+
+            openFile=True : ouvre le fichier name apres l'avoir cree
+            png=True : on reemplace le fichier pgm cree par un fichier png
         """
         if name == "":
             #generation d'un nom 
@@ -159,6 +156,10 @@ class Grid:
                 f.write("\n")
         f.close()
 
+        if png:
+            new_name = name.removesuffix(".pgm")+".png"
+            os.system("convert "+name+" "+new_name)
+            name = new_name
         if openFile:
             os.system("open "+name)
     
@@ -214,11 +215,11 @@ class Grid:
         for line in self.grid:
             for c in line:
                 if c == Color.WHITE:
-                    f.write("0")
+                    f.write("██")
                 elif c == Color.BLACK:
-                    f.write("1")
+                    f.write("░░")
                 else:
-                    f.write("-")
+                    f.write("??")
             f.write("\n")
         f.write(str(self.m_colonnes)+" "+str(self.n_lignes)+"\n")
         f.write(str(self.contrainte_l)+"\n")

@@ -9,3 +9,4 @@ out/*
 enonce*
 src/tester*
 #res.csv
+sample_results/latest_result*
