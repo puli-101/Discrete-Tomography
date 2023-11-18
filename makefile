@@ -9,7 +9,7 @@ bin/convert_pgm: src/img_handler/convert_pgm.c
 	gcc -o $@ $<
 
 clean:
-	rm -rf bin/*
+	rm -rf bin/* compte_rendu.zip
 
 clean-img:
 	rm -rf output/*
@@ -18,7 +18,7 @@ clean-vid:
 	rm -rf videos/*
 
 clean-all:
-	rm -rf output/* videos/*
+	rm -rf output/* videos/* sample_results/latest_result.*
 
 mp4:
 	ffmpeg -y -i $(INPUT) -c:v mpeg4 videos/$(OUTPUT).mp4 
@@ -30,3 +30,6 @@ gif:
 
 convert:
 	convert $(INPUT) sample_results/conversion.png 
+
+zip:
+	zip compte_rendu.zip src/misc/* src/img_handler/* src/algorithms.py src/debugging.py src/grid.py src/image.py custom_input/* instances/* main.py makefile README.md

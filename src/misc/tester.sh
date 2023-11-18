@@ -3,6 +3,8 @@ c=0.0
 tests=$1
 txt=''
 
+mkdir -p exec_times
+
 if [ "$2" == "true" ] 
 then
     txt="partial=true"

@@ -17,7 +17,8 @@ if __name__ == "__main__":
     start_time = 0
     partial=False
     exec_time = 0
-
+    show = False 
+    
     if len(sys.argv) > 1:
         #options d'execution
         for option in sys.argv[1:]:
@@ -56,6 +57,8 @@ if __name__ == "__main__":
             #option pour executer uniquement la coloration partielle
             elif option.startswith("partial="):
                 partial = option_val
+            elif option.startswith("show="):
+                show = option_val
             #option aide
             elif option == "help" or option == "--help" or option == "-help":
                 print("Discrete Tomography Image Reconstructor")
@@ -71,14 +74,14 @@ if __name__ == "__main__":
                 print("mkvid\t\t\t: Transforms the reconstruction trace on 'output' to an mp4, avi, and gif video")
                 print("time=true\t\t: Returns the execution time on the standard error output")
                 print("partial=true\t\t: Executes a partial coloration instead of a full recursive coloration")
+                print("show=true\t\t: Opens the resulting image at the end of the execution")
                 exit()
             else:
                 print("Error: unknown option "+option)
                 exit(-1)
 
     #initialisation de l'environement
-    os.system("mkdir -p output/")
-    
+    os.system("mkdir -p output/ sample_results/")
     G = None
     solver = None
     ok = None
@@ -111,9 +114,9 @@ if __name__ == "__main__":
     if ok != False:
         G.print_grid()
         G.print_txt()
-        G.save_grid(name='sample_results/latest_result.pgm', png=True, openFile=True)
+        G.save_grid(name='sample_results/latest_result.pgm', png=True, openFile=show)
     else:
-        G_copy.save_grid(name='sample_results/latest_result.pgm', png=True, openFile=True)
+        G_copy.save_grid(name='sample_results/latest_result.pgm', png=True, openFile=show)
         print("No solution")
 
     #generation de la video
