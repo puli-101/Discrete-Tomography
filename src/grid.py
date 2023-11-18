@@ -108,7 +108,11 @@ class Grid:
             elif line == "":
                 constraints.append([])
             else:
-                constraints.append([int(x) for x in line.split(' ')])
+                int_line = []
+                for x in line.split(' '):
+                    if x != '':
+                        int_line.append(int(x))
+                constraints.append(int_line)
 
         n = len(line_constraints)
         m = len(column_constraints)
