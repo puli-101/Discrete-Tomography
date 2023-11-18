@@ -11,3 +11,4 @@ src/tester*
 #res.csv
 sample_results/latest_result.pgm
 sample_results/latest_result.png
+tmp/*

@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
     
     G.print_grid()
-
+    G_copy = G 
     start_time = time.time()
     #Execution de l'algorithme de coloration complete
     if not(partial):
@@ -111,11 +111,11 @@ if __name__ == "__main__":
     if ok != False:
         G.print_grid()
         G.print_txt()
-        G.save_grid(name='sample_results/latest_result.pgm', png=True)
+        G.save_grid(name='sample_results/latest_result.pgm', png=True, openFile=True)
     else:
+        G_copy.save_grid(name='sample_results/latest_result.pgm', png=True, openFile=True)
         print("No solution")
 
-    
     #generation de la video
     if db.GRAPHICS_DEBUG:
         name = Grid.save_video()

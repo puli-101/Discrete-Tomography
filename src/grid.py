@@ -22,7 +22,7 @@ class Color(Enum):
             return "Color(uncolored)"
 
 class Grid:
-    def __init__(self, n_lignes, m_colonnes, contrainte_l = None, contrainte_c = None):
+    def __init__(self, n_lignes, m_colonnes, contrainte_l = None, contrainte_c = None, name="Grid 1"):
         """
             Initialisation de l'objet Grid
         """
@@ -30,7 +30,7 @@ class Grid:
             contrainte_c = [[]]*m_colonnes
         if (contrainte_l == None):
             contrainte_l = [[]]*n_lignes
-        
+        self.name = name
         self.n_lignes =  n_lignes
         self.m_colonnes = m_colonnes
         self.contrainte_c = contrainte_c.copy() #liste de listes
@@ -62,16 +62,18 @@ class Grid:
                 print("??",end="")
         print()
 
-    def print_grid(self):
+    def print_grid(self, show_constraints=False):
         """
             Affichage ligne par ligne de la grille
         """
+        print(self.name+":")
         #self.print_dash()
         for i in range(0,self.n_lignes):
             self.print_line(i)
             #self.print_dash()
-        print("Line constraints:",self.contrainte_l)
-        print("Column constraints:",self.contrainte_c)
+        if show_constraints:
+            print("Line constraints:",self.contrainte_l)
+            print("Column constraints:",self.contrainte_c)
     
     @staticmethod
     def read_file(name):
@@ -165,7 +167,7 @@ class Grid:
             os.system("convert "+name+" "+new_name)
             name = new_name
         if openFile:
-            os.system("open "+name)
+            os.system("open "+name+" 2> /dev/null")
     
     @staticmethod
     def save_video():
