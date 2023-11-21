@@ -73,9 +73,9 @@ class Image:
                 if not(readHeader):
                     readHeader = True
                     if line!="P2":
-                        print("Error: Incompatible header")
-                        print("Re execute with force=true")
-                        return
+                        print("Error: Incompatible header pgm format")
+                        print("Re execute with force=true ?")
+                        exit(-1)
                     continue
                 if not(readDim):
                     nums = line.split(' ')
@@ -88,7 +88,7 @@ class Image:
                     scale = int(line)
                     if scale != 2:
                         print("Error: Incompatible scale")
-                        return
+                        exiit(-1)
                     continue
                 matrix_line = []
                 for c in line.split(' '):
@@ -101,7 +101,7 @@ class Image:
                 matrix.append(matrix_line)
         
         #compression de la matrice (on force la compression si trop grande)
-        if compress or (n > 70 and m > 70):
+        if compress or (n > 151 and m > 151):
             print(n,m)
             matrix, n, m = Image.compress_matrix(matrix, n, m, chunk_size=chunk_size)
 
