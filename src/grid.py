@@ -193,6 +193,8 @@ class Grid:
             fps = 2
         elif n_files < 50: #ensure video time of 5 seconds
             fps = n_files//5
+        elif n_files > 1000:
+            fps = 24 * (n_files//1000)
 
         images = [img for img in files if img.endswith(".pgm")]
         frame = cv2.imread(os.path.join(image_folder, images[0]))
@@ -200,8 +202,9 @@ class Grid:
         video = cv2.VideoWriter(video_name, 0, fps, (width,height))
 
         images.sort(key=lambda nm: int(nm.removeprefix("grid_").removesuffix(".pgm")) )
+        print("Loading images...")
         for image in images:
-            print(image)
+            #print(image)
             video.write(cv2.imread(os.path.join(image_folder, image)))
 
         cv2.destroyAllWindows()
