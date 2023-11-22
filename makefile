@@ -33,3 +33,7 @@ convert:
 
 zip:
 	zip compte_rendu.zip src/misc/* src/img_handler/* src/algorithms.py src/debugging.py src/grid.py src/image.py custom_input/* instances/* main.py makefile README.md
+
+tar:
+	tar cvzf compte_rendu.tgz src/misc/* src/img_handler/* src/algorithms.py src/debugging.py src/grid.py src/image.py custom_input/* instances/* main.py makefile README.md
+
