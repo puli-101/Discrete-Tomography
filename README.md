@@ -10,6 +10,7 @@ Description du projet...
     pip install ez_setup (avec --break-system-packages si necessaire)
 
     sudo apt install ffmpeg 
+    sudo apt install imagemagick
 
 ## 2 Distribution des Fichiers
 

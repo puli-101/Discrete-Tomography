@@ -107,7 +107,8 @@ class Image:
 
         #calcul des contraintes
         cl,cc = Image.calc_constraints(matrix)
-
+        name = img_src
+        Image.save_constraints(cl,cc,name.removesuffix(".pgm")+".txt")
 
         G = Grid(n,m,cl,cc)
         G.grid = matrix 
@@ -142,3 +143,21 @@ class Image:
         new_n = len(new_mat)
         new_m = len(new_mat[0])
         return new_mat, new_n, new_m
+    
+    @staticmethod
+    def save_constraints(cl,cc,name):
+        """
+            Transforme une image dans une liste de contraintes ligne colonne
+            dans le meme format que les instances de base
+        """
+        f = open(name, "w")
+        for line in cl:
+            for elt in line:
+                f.write(str(elt)+" ")
+            f.write("\n")
+        f.write("#\n")
+        for line in cc:
+            for elt in line:
+                f.write(str(elt)+" ")
+            f.write("\n")
+        f.close()
